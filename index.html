@@ -3,337 +3,377 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mehul Deshmukh | Portfolio</title>
+    <title>Mehul Deshmukh | Creative Portfolio</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
 
+        /* Default Theme Variables */
         :root {
-            --bg-main: #0a0a0a;
-            --bg-secondary: #141414;
-            --accent: #5e4b8a; /* Deep Purple Accent */
-            --text-light: #f4f4f6;
-            --text-muted: #a0a0a5;
+            --bg-color: #0f0c29; /* Fallback */
+            --accent: #8a2be2;   /* Default Purple */
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-muted: #b0b0c0;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
+            font-family: 'Outfit', sans-serif;
         }
 
+        /* Animated Gradient Background */
         body {
-            background-color: var(--bg-main);
-            color: var(--text-light);
-            line-height: 1.6;
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1a2e);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* Navigation */
         header {
             position: fixed;
             top: 0;
-            left: 0;
             width: 100%;
             padding: 20px 5%;
-            background: rgba(10, 10, 10, 0.95);
+            background: rgba(15, 12, 41, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            border-bottom: 1px solid #222;
-            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
         }
+
         .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--text-light);
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--text-main);
             text-decoration: none;
             letter-spacing: 1px;
         }
-        .logo span {
-            color: var(--accent);
-        }
+
+        .logo span { color: var(--accent); transition: color 0.3s ease; }
+
         nav ul {
             display: flex;
             list-style: none;
-        }
-        nav ul li {
-            margin-left: 30px;
-        }
-        nav ul li a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 14px;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-        nav ul li a:hover {
-            color: var(--accent);
+            gap: 25px;
         }
 
-        /* Layout */
-        section {
-            padding: 120px 10% 80px;
-            min-height: 100vh;
+        nav ul li a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.3s;
+            padding-bottom: 5px;
+        }
+
+        nav ul li a:hover, nav ul li a.active-link {
+            color: var(--accent);
+            border-bottom: 2px solid var(--accent);
+        }
+
+        /* Theme Customizer */
+        .theme-customizer {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 15px 10px;
+            border-radius: 30px;
+            border: 1px solid var(--glass-border);
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            gap: 15px;
+            z-index: 999;
+        }
+
+        .color-btn {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: 0.3s;
+        }
+        .color-btn:hover { transform: scale(1.2); border-color: #fff; }
+
+        /* Section Layout (Hidden by default, shown via JS) */
+        section {
+            display: none;
+            padding: 130px 10% 80px;
+            min-height: 100vh;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        section.active-section {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .section-title {
-            font-size: 32px;
-            font-weight: 700;
+            font-size: 38px;
             margin-bottom: 40px;
-            position: relative;
-            display: inline-block;
+            font-weight: 800;
         }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: -8px;
-            width: 50%;
-            height: 3px;
-            background-color: var(--accent);
+        .section-title span { color: var(--accent); }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
 
-        /* Hero Section (Side-by-Side) */
-        #home {
-            flex-direction: row;
+        /* Home Section */
+        .home-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
             align-items: center;
-            justify-content: space-between;
-            gap: 40px;
         }
-        .hero-text {
-            flex: 1.2;
+
+        .hero-text h1 { font-size: 60px; line-height: 1.1; margin-bottom: 15px; }
+        .hero-text h2 { color: var(--accent); font-weight: 600; margin-bottom: 25px; font-size: 24px; transition: color 0.3s ease; }
+        .hero-text p { color: var(--text-muted); font-size: 18px; margin-bottom: 35px; max-width: 90%; }
+
+        /* Featured Media Grid on Home */
+        .media-collage {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 200px 200px;
+            gap: 15px;
         }
-        .hero-image {
-            flex: 0.8;
-            text-align: center;
-        }
-        .hero-image img {
-            width: 100%;
-            max-width: 380px;
+        .media-item {
             border-radius: 15px;
-            border: 3px solid var(--accent);
-            box-shadow: 0 10px 30px rgba(94, 75, 138, 0.2);
-            object-fit: cover;
+            overflow: hidden;
+            border: 2px solid var(--accent);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
         }
-        
-        h1 {
-            font-size: 55px;
-            line-height: 1.2;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            font-size: 22px;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        .hero-desc {
-            color: var(--text-muted);
-            margin-bottom: 30px;
-            font-size: 16px;
-            max-width: 90%;
-        }
+        .media-item img { width: 100%; height: 100%; object-fit: cover; }
+        .media-item video { width: 100%; height: 100%; object-fit: cover; }
+        .tall-item { grid-row: span 2; }
 
         /* Buttons */
         .btn {
+            padding: 12px 30px;
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
             display: inline-block;
-            padding: 12px 28px;
-            background-color: var(--accent);
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 5px;
             transition: 0.3s;
             border: 2px solid var(--accent);
-            margin-right: 15px;
-            margin-bottom: 10px;
+            cursor: pointer;
         }
-        .btn:hover {
-            background-color: transparent;
-            color: var(--accent);
-        }
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid var(--accent);
-        }
-        .btn-outline:hover {
-            background-color: var(--accent);
-            color: #fff;
-        }
+        .btn:hover { background: transparent; color: #fff; border-color: #fff; }
 
-        /* Timeline (About) */
-        .timeline-item {
-            background: var(--bg-secondary);
-            padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent);
-            margin-bottom: 20px;
-        }
-        .timeline-item h3 {
-            margin-bottom: 5px;
-        }
-        .timeline-item h4 {
-            color: var(--accent);
-            font-weight: 400;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
+        /* Works Grid */
+        .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .works-card h3 { margin-bottom: 15px; font-size: 22px; }
+        .works-card p { color: var(--text-muted); margin-bottom: 20px; }
 
-        /* Grid Layouts */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+        /* Timeline (Experience) */
+        .timeline { border-left: 3px solid var(--accent); padding-left: 20px; margin-left: 10px; }
+        .timeline-item { margin-bottom: 30px; position: relative; }
+        .timeline-item::before {
+            content: ''; position: absolute; width: 15px; height: 15px;
+            background: var(--accent); border-radius: 50%; left: -29px; top: 5px;
         }
-        
-        .card {
-            background: var(--bg-secondary);
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid #222;
-            transition: 0.3s;
-        }
-        .card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
-        }
-        .card h3 {
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-        .card p {
-            color: var(--text-muted);
-            font-size: 14px;
-            margin-bottom: 25px;
-        }
+        .timeline-item h3 { font-size: 20px; }
+        .timeline-item h4 { color: var(--accent); margin: 5px 0 10px; font-size: 15px; }
 
-        /* Contact */
-        .contact-box p {
-            font-size: 16px;
-            margin-bottom: 15px;
-        }
-        .contact-box a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            #home {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding-top: 150px;
-            }
-            .hero-desc {
-                margin: 0 auto 30px;
-            }
-            nav ul {
-                display: none;
-            }
+        /* Responsive */
+        @media (max-width: 900px) {
+            .home-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-text p { margin: 0 auto 30px; }
+            nav ul { display: none; } /* Consider adding a hamburger menu later for mobile */
+            .theme-customizer { bottom: 20px; top: auto; right: 50%; transform: translateX(50%); flex-direction: row; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Theme Customizer -->
+    <div class="theme-customizer">
+        <div class="color-btn" style="background: #8a2be2;" onclick="setTheme('#8a2be2')"></div> <!-- Purple -->
+        <div class="color-btn" style="background: #00d2ff;" onclick="setTheme('#00d2ff')"></div> <!-- Blue -->
+        <div class="color-btn" style="background: #11998e;" onclick="setTheme('#11998e')"></div> <!-- Green -->
+        <div class="color-btn" style="background: #f12711;" onclick="setTheme('#f12711')"></div> <!-- Orange -->
+    </div>
+
     <header>
-        <a href="#home" class="logo">Mehul<span>.</span></a>
+        <a href="#" class="logo" onclick="navigates('home')">Mehul<span>.</span></a>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a onclick="navigates('home')" class="nav-btn active-link">Home</a></li>
+                <li><a onclick="navigates('about')" class="nav-btn">About</a></li>
+                <li><a onclick="navigates('experience')" class="nav-btn">Experience</a></li>
+                <li><a onclick="navigates('works')" class="nav-btn">Works</a></li>
+                <li><a onclick="navigates('resume')" class="nav-btn">Resume</a></li>
+                <li><a onclick="navigates('contact')" class="nav-btn">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="home">
-        <div class="hero-text">
-            <h1>Hi, I'm Mehul</h1>
-            <div class="subtitle">Content Creator & Medical Writer</div>
-            <p class="hero-desc">
-                Beginning my Bachelor of Physiotherapy (BPT) journey at Jain University. I blend growing healthcare knowledge with digital marketing expertise to craft compelling visual stories, cinematic media, and impactful social strategies.
-            </p>
-            <div>
-                <!-- RESUME DOWNLOAD -->
-                <a href="Mehul_Deshmukh_Resume.docx" download class="btn">Download Resume</a>
-                <a href="#portfolio" class="btn btn-outline">View Works</a>
+    <main>
+        <!-- HOME SECTION -->
+        <section id="home" class="active-section">
+            <div class="home-grid">
+                <div class="hero-text">
+                    <h1>Hi, I'm Mehul</h1>
+                    <h2>Content Creator & Medical Writer</h2>
+                    <p>Blending healthcare knowledge with high-end digital marketing expertise. I craft compelling visual stories, cinematic media, and impactful social strategies.</p>
+                    <a onclick="navigates('works')" class="btn">Explore My Work</a>
+                </div>
+                
+                <div class="media-collage">
+                    <div class="media-item tall-item">
+                        <!-- Make sure to upload reel.mp4 to Github -->
+                        <video src="reel.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="media-item">
+                        <!-- Upload photo1.jpg -->
+                        <img src="photo1.jpg" alt="Featured Work 1">
+                    </div>
+                    <div class="media-item">
+                        <!-- Upload photo2.jpg -->
+                        <img src="photo2.jpg" alt="Featured Work 2">
+                    </div>
+                </div>
             </div>
-        </div>
-        
-        <div class="hero-image">
-            <!-- PROFILE PICTURE -->
-            <img src="profile.png.PNG" alt="Mehul Deshmukh">
-        </div>
-    </section>
+        </section>
 
-    <!-- ABOUT / EXPERIENCE SECTION -->
-    <section id="about">
-        <h2 class="section-title">Background & Experience</h2>
-        
-        <div class="timeline-item">
-            <h3>Bachelor of Physiotherapy (BPT)</h3>
-            <h4>Jain University | Expected Graduation: 2030</h4>
-            <p>Embarking on a journey in healthcare that provides a solid foundation for specialized medical writing and authentic health communication.</p>
-        </div>
-
-        <div class="timeline-item">
-            <h3>Event Volunteer & Media Coverage</h3>
-            <h4>Pramaan 3.0 | Parul Institute of Applied Sciences</h4>
-            <p>Assisted in event planning, logistics management, and on-ground execution. Captured and produced cinematic video content and promotional materials for the forensic festival.</p>
-        </div>
-
-        <div class="timeline-item">
-            <h3>Freelance Content Creator</h3>
-            <h4>Photography, Videography & Social Media</h4>
-            <p>Producing engaging visual content for cultural festivals and live performances. Skilled in aesthetic styling, visual pacing, and utilizing tools like Canva, CapCut, and AI production software.</p>
-        </div>
-    </section>
-
-    <!-- PORTFOLIO SECTION -->
-    <section id="portfolio">
-        <h2 class="section-title">Featured Works</h2>
-        
-        <div class="grid-container">
-            <!-- ARTICLE 1 -->
-            <div class="card">
-                <h3>Healthcare & Medical Writing</h3>
-                <p>Read my insights on the intersection of healthcare and communication.</p>
-                <a href="Healthcare_Article.pdf" target="_blank" class="btn btn-outline" style="padding: 8px 20px; font-size: 14px;">Read Article</a>
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <h2 class="section-title">About <span>Me</span></h2>
+            <div class="glass-card" style="max-width: 800px;">
+                <p style="font-size: 18px; margin-bottom: 20px; line-height: 1.8;">
+                    I am a versatile creator currently beginning my Bachelor of Physiotherapy (BPT) journey at Jain University. My unique background allows me to bridge the gap between complex healthcare concepts and engaging digital communication.
+                </p>
+                <p style="font-size: 18px; line-height: 1.8;">
+                    Beyond the medical field, my passion lies in aesthetics and visual storytelling. Whether I am shooting cinematic footage for university festivals, designing branding materials, or writing specialized medical content, my goal is always to create a lasting impact.
+                </p>
             </div>
+        </section>
 
-            <!-- ARTICLE 2 -->
-            <div class="card">
-                <h3>Plastics For Change</h3>
-                <p>A content piece exploring sustainability and environmental impact.</p>
-                <a href="Plastics_Article.pdf" target="_blank" class="btn btn-outline" style="padding: 8px 20px; font-size: 14px;">Read Document</a>
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience">
+            <h2 class="section-title">My <span>Experience</span></h2>
+            <div class="glass-card" style="max-width: 800px;">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Event Volunteer & Media Coverage</h3>
+                        <h4>Pramaan 3.0 | Parul Institute of Applied Sciences</h4>
+                        <p style="color: var(--text-muted);">Assisted in event planning, logistics management, and on-ground execution. Captured and produced cinematic video content and promotional materials for the forensic festival.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Freelance Content Creator</h3>
+                        <h4>Photography, Videography & Social Media</h4>
+                        <p style="color: var(--text-muted);">Producing engaging visual content for cultural festivals and live performances. Skilled in aesthetic styling, visual pacing, and utilizing tools like Canva, CapCut, and AI production software.</p>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <!-- GOOGLE DRIVE LINK -->
-            <div class="card">
-                <h3>Visual Media Portfolio</h3>
-                <p>Access my complete Google Drive containing high-quality event photography, cinematic video edits, and branding mockups.</p>
-                <a href="https://drive.google.com/drive/folders/13ro8TUWFXnzUNNAsq1b7PyzdWH94VuHg" target="_blank" class="btn btn-outline" style="padding: 8px 20px; font-size: 14px;">Open Google Drive</a>
+        <!-- WORKS SECTION -->
+        <section id="works">
+            <h2 class="section-title">Featured <span>Works</span></h2>
+            <div class="works-grid">
+                <div class="glass-card works-card">
+                    <h3>Healthcare & Medical Writing</h3>
+                    <p>Read my insights on the intersection of healthcare and communication.</p>
+                    <a href="Healthcare_Article.pdf" target="_blank" class="btn">Read Article</a>
+                </div>
+                <div class="glass-card works-card">
+                    <h3>Plastics For Change</h3>
+                    <p>A content piece exploring sustainability and environmental impact.</p>
+                    <a href="Plastics_Article.pdf" target="_blank" class="btn">Read Document</a>
+                </div>
+                <div class="glass-card works-card">
+                    <h3>Visual Media Drive</h3>
+                    <p>Access my complete Google Drive containing high-quality event photography and cinematic video edits.</p>
+                    <a href="https://drive.google.com/drive/folders/13ro8TUWFXnzUNNAsq1b7PyzdWH94VuHg" target="_blank" class="btn">Open Drive</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="card contact-box" style="max-width: 600px;">
-            <p><strong>Email:</strong> <a href="mailto:mehuldeshmukh106@gmail.com">mehuldeshmukh106@gmail.com</a></p>
-            <p><strong>Phone:</strong> +91 8109007299</p>
-            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mehul-deshmukh-663390201" target="_blank">Connect on LinkedIn</a></p>
-        </div>
-    </section>
+        <!-- RESUME SECTION -->
+        <section id="resume">
+            <h2 class="section-title">My <span>Resume</span></h2>
+            <div class="glass-card" style="max-width: 600px; text-align: center;">
+                <h3 style="margin-bottom: 20px; font-size: 24px;">Professional Profile</h3>
+                <p style="color: var(--text-muted); margin-bottom: 30px;">Download my complete resume to view my full academic background, technical skills, and certifications.</p>
+                <a href="Mehul_Deshmukh_Resume.docx" download class="btn" style="font-size: 18px; padding: 15px 40px;">📄 Download Resume</a>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact">
+            <h2 class="section-title">Get In <span>Touch</span></h2>
+            <div class="glass-card" style="max-width: 600px;">
+                <p style="font-size: 18px; margin-bottom: 20px;">Let's collaborate! Feel free to reach out for content creation, medical writing, or social media management opportunities.</p>
+                <p style="font-size: 18px; margin-bottom: 15px;">📧 <strong style="color: var(--accent);">Email:</strong> mehuldeshmukh106@gmail.com</p>
+                <p style="font-size: 18px; margin-bottom: 15px;">📞 <strong style="color: var(--accent);">Phone:</strong> +91 8109007299</p>
+                <p style="font-size: 18px; margin-bottom: 15px;">💼 <strong style="color: var(--accent);">LinkedIn:</strong> <a href="https://www.linkedin.com/in/mehul-deshmukh-663390201" target="_blank" style="color: #fff; text-decoration: none;">Connect on LinkedIn</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Javascript for Page Navigation and Theme Customizer -->
+    <script>
+        // Tab Navigation Logic (Single Page Application feel)
+        function navigates(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(sec => sec.classList.remove('active-section'));
+            
+            // Show target section
+            document.getElementById(sectionId).classList.add('active-section');
+            
+            // Update Active Link in Nav
+            const navLinks = document.querySelectorAll('.nav-btn');
+            navLinks.forEach(link => link.classList.remove('active-link'));
+            
+            // Find the clicked link and make it active
+            event.target.classList.add('active-link');
+            
+            // Scroll to top automatically when changing tabs
+            window.scrollTo(0,0);
+        }
+
+        // Theme Customizer Logic
+        function setTheme(color) {
+            document.documentElement.style.setProperty('--accent', color);
+        }
+    </script>
 
 </body>
 </html>
