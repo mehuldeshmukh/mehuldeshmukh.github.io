@@ -1,493 +1,1010 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mehul Deshmukh | Aesthetic Portfolio</title>
-    <!-- Premium Fonts: Syne for Display, Manrope for Body -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap');
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#050505" id="themeColorMeta">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<title>Mehul Deshmukh — Content Writer, Medical Writer & Social Media Manager | Bengaluru</title>
+<meta name="description" content="Mehul Deshmukh — Content Writing, Medical Writing, Social Media Management & Photography. BPT student based in Bengaluru, open to internships and hybrid roles.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mehuldeshmukh.com/">
 
-        :root {
-            --bg-color: #050505;
-            --surface-color: rgba(255, 255, 255, 0.03);
-            --surface-border: rgba(255, 255, 255, 0.08);
-            --text-primary: #ffffff;
-            --text-secondary: #999999;
-            --accent: #d4c4f5; /* Subtle aesthetic lavender/silver */
-        }
+<!-- Open Graph -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Mehul Deshmukh — Content Writer, Medical Writer & Social Media Manager">
+<meta property="og:description" content="Creative & Clinical. Content writing, medical writing, social media management, and photography — from a physiotherapy student in Bengaluru. Open to internships and hybrid roles.">
+<meta property="og:image" content="headshot.jpg">
+<meta property="og:url" content="https://mehuldeshmukh.com/">
+<meta property="og:site_name" content="Mehul Deshmukh">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-font-smoothing: antialiased;
-        }
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mehul Deshmukh — Content Writer, Medical Writer & Social Media Manager">
+<meta name="twitter:description" content="Content writing, medical writing, social media management, and photography — from a physiotherapy student in Bengaluru.">
+<meta name="twitter:image" content="headshot.jpg">
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: 'Manrope', sans-serif;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
+<!-- Favicon (inline, no external file needed) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23050505'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' font-weight='700' fill='%23b9aaff' text-anchor='middle'%3EMD%3C/text%3E%3C/svg%3E">
 
-        /* Ambient Premium Glow Background */
-        .ambient-glow {
-            position: fixed;
-            top: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60vw;
-            height: 60vw;
-            background: radial-gradient(circle, rgba(212, 196, 245, 0.05) 0%, rgba(5, 5, 5, 0) 70%);
-            filter: blur(80px);
-            z-index: -1;
-            animation: breathe 10s ease-in-out infinite alternate;
-            pointer-events: none;
-        }
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Mehul Deshmukh",
+  "jobTitle": "Content Writer, Medical Writer & Social Media Manager",
+  "description": "BPT student specializing in content writing, medical writing, social media management, and photography.",
+  "knowsAbout": ["Content Writing", "Medical Writing", "Social Media Management", "Photography"],
+  "url": "https://mehuldeshmukh.com/",
+  "email": "mailto:mehuldeshmukh106@gmail.com",
+  "telephone": "+91-8109007299",
+  "address": { "@type": "PostalAddress", "addressLocality": "Bengaluru", "addressCountry": "IN" },
+  "sameAs": ["https://www.linkedin.com/in/mehul-deshmukh-663390201"]
+}
+</script>
 
-        @keyframes breathe {
-            0% { transform: translateX(-50%) scale(1); opacity: 0.8; }
-            100% { transform: translateX(-50%) scale(1.1); opacity: 1; }
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #050505;
+    --glow-b: rgba(200, 200, 210, 0.10);
+    --ink: #ededf0;
+    --ink-dim: rgba(237, 237, 240, 0.62);
+    --ink-faint: rgba(237, 237, 240, 0.38);
+    --line: rgba(255, 255, 255, 0.09);
+    --glass: rgba(255, 255, 255, 0.035);
+    --glass-hover: rgba(255, 255, 255, 0.06);
+    --accent: #b9aaff;
+    --accent-dim: rgba(185, 170, 255, 0.5);
+    --accent-glow: rgba(185, 170, 255, 0.16);
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+    --f-display: 'Syne', sans-serif;
+    --f-body: 'Manrope', sans-serif;
+  }
 
-        /* Floating Pill Navigation */
-        header {
-            position: fixed;
-            top: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(20, 20, 20, 0.4);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--surface-border);
-            border-radius: 100px;
-            padding: 10px 25px;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--f-body);
+    min-height:100vh;
+    overflow-x:hidden;
+    position:relative;
+    -webkit-font-smoothing:antialiased;
+    transition: background 0.6s var(--ease);
+  }
 
-        nav ul li a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            padding: 8px 12px;
-            border-radius: 100px;
-        }
+  ::selection{ background: var(--accent-dim); color:#050505; }
+  a{ color:inherit; text-decoration:none; }
+  h1,h2,h3,h4{ font-family: var(--f-display); letter-spacing:-0.02em; }
+  button{ font-family: var(--f-body); }
+  img{ -webkit-user-drag:none; user-select:none; }
 
-        nav ul li a:hover, nav ul li a.active-link {
-            color: var(--bg-color);
-            background-color: var(--text-primary);
-        }
+  /* ---------- Ambient background ---------- */
+  .ambient{ position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
+  .orb{ position:absolute; border-radius:50%; filter: blur(90px); will-change: transform; transition: background 0.6s var(--ease); }
+  .orb-1{
+    width:52vw; height:52vw; top:-10%; left:-10%;
+    background: radial-gradient(circle at 30% 30%, var(--accent-glow), transparent 70%);
+    animation: drift1 34s ease-in-out infinite;
+  }
+  .orb-2{
+    width:44vw; height:44vw; bottom:-15%; right:-10%;
+    background: radial-gradient(circle at 60% 60%, var(--glow-b), transparent 70%);
+    animation: drift2 40s ease-in-out infinite;
+  }
+  .grain{
+    position:fixed; inset:0; z-index:1; pointer-events:none; opacity:0.025;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  @keyframes drift1{ 0%,100%{ transform: translate(0,0) scale(1); } 33%{ transform: translate(6vw, 8vh) scale(1.08); } 66%{ transform: translate(-4vw, 4vh) scale(0.95); } }
+  @keyframes drift2{ 0%,100%{ transform: translate(0,0) scale(1); } 50%{ transform: translate(-7vw, -6vh) scale(1.12); } }
 
-        /* Section Layout & Animations */
-        section {
-            display: none;
-            padding: 180px 8% 100px;
-            min-height: 100vh;
-            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        section.active-section {
-            display: block;
-        }
+  @media (prefers-reduced-motion: reduce){
+    .orb{ animation:none; }
+    html{ scroll-behavior:auto; }
+    *{ transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+  }
 
-        @keyframes fadeUp {
-            to { opacity: 1; transform: translateY(0); }
-        }
+  /* ---------- Nav ---------- */
+  nav{
+    position:fixed;
+    top: calc(24px + env(safe-area-inset-top));
+    left:50%; transform:translateX(-50%);
+    z-index:100; display:flex; align-items:center; gap:4px;
+    padding:8px; border-radius:999px;
+    background: rgba(15,15,17,0.55);
+    border:1px solid var(--line);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    max-width: 94vw;
+  }
+  nav .navlink{
+    position:relative; font-size:0.8125rem; font-weight:600; letter-spacing:0.01em;
+    color: var(--ink-dim); padding:10px 18px; border-radius:999px; cursor:pointer;
+    transition: color 0.4s var(--ease); white-space:nowrap;
+  }
+  nav .navlink.active{ color:#050505; }
+  nav .nav-pill{
+    position:absolute; top:8px; bottom:8px; border-radius:999px; background: var(--ink);
+    z-index:-1; transition: left 0.5s var(--ease), width 0.5s var(--ease), background 0.5s var(--ease);
+  }
+  nav .navlink span{ position:relative; z-index:2; }
 
-        /* Typography */
-        h1, h2, h3 {
-            font-family: 'Syne', sans-serif;
-            font-weight: 700;
-        }
+  /* ---------- Layout shell ---------- */
+  main{
+    position:relative; z-index:2; max-width:1180px; margin:0 auto;
+    padding: 128px calc(32px + env(safe-area-inset-right)) 100px calc(32px + env(safe-area-inset-left));
+    min-height:100vh;
+  }
+  .section{ display:none; }
+  .section.active{ display:block; animation: fadeSection 0.7s var(--ease); }
+  @keyframes fadeSection{ from{ opacity:0; transform: translateY(14px); } to{ opacity:1; transform: translateY(0); } }
 
-        .heading-huge {
-            font-size: clamp(40px, 8vw, 90px);
-            line-height: 1.1;
-            letter-spacing: -2px;
-            margin-bottom: 20px;
-        }
-        
-        .heading-italic {
-            font-style: italic;
-            font-weight: 400;
-            color: var(--text-secondary);
-        }
+  .eyebrow{ font-size:0.75rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color: var(--accent-dim); margin-bottom:14px; display:block; transition: color 0.5s var(--ease); }
 
-        .section-title {
-            font-size: clamp(30px, 5vw, 50px);
-            letter-spacing: -1px;
-            margin-bottom: 50px;
-        }
+  /* ---------- Glass card base ---------- */
+  .glass{
+    background: var(--glass); border:1px solid var(--line); border-radius:22px;
+    backdrop-filter: blur(18px) saturate(120%); -webkit-backdrop-filter: blur(18px) saturate(120%);
+    transition: background 0.5s var(--ease), border-color 0.5s var(--ease), transform 0.5s var(--ease);
+  }
+  .glass:hover{ background: var(--glass-hover); border-color: rgba(255,255,255,0.16); }
 
-        p {
-            font-size: 16px;
-            line-height: 1.7;
-            color: var(--text-secondary);
-            font-weight: 300;
-        }
+  /* ---------- HOME / Bento ---------- */
+  .hero-tag{ font-size: clamp(2.375rem, 6vw, 4.75rem); font-weight:700; line-height:1.02; margin-bottom:18px; }
+  .hero-tag em{ font-style:normal; color: var(--accent); transition: color 0.5s var(--ease); }
+  .hero-sub{ font-size:1rem; color: var(--ink-dim); max-width:480px; line-height:1.6; margin-bottom:48px; }
 
-        /* Bento Box Grid (GenZ Aesthetic Layout) */
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, 250px);
-            gap: 20px;
-            margin-top: 60px;
-        }
+  .open-badge{
+    display:inline-flex; align-items:center; gap:8px; font-size:0.75rem; font-weight:600;
+    color: var(--ink-dim); border:1px solid var(--line); border-radius:999px; padding:8px 14px 8px 12px;
+    margin-bottom:20px; background: var(--glass); max-width:100%; flex-wrap:wrap; line-height:1.4;
+  }
+  .pulse-dot{ width:7px; height:7px; border-radius:50%; background: var(--accent); position:relative; flex-shrink:0; transition: background 0.5s var(--ease); }
+  .pulse-dot::after{
+    content:''; position:absolute; inset:0; border-radius:50%; background: var(--accent);
+    animation: pulseDot 2.2s ease-out infinite;
+  }
+  @keyframes pulseDot{ 0%{ transform:scale(1); opacity:0.7; } 100%{ transform:scale(2.6); opacity:0; } }
 
-        .bento-item {
-            background: var(--surface-color);
-            border: 1px solid var(--surface-border);
-            border-radius: 24px;
-            overflow: hidden;
-            position: relative;
-            backdrop-filter: blur(10px);
-        }
+  .bento{ display:grid; grid-template-columns: repeat(6, 1fr); gap:16px; }
+  .bento-item{ position:relative; overflow:hidden; min-height:200px; }
+  .bento-item.name-card{ grid-column: span 6; padding:44px; min-height:auto; }
+  .bento-item.video-card{ grid-column: span 4; grid-row: span 2; min-height:420px; }
+  .bento-item.photo-card{ grid-column: span 2; min-height:200px; }
+  .bento-item.info-card{ grid-column: span 2; padding:26px; display:flex; flex-direction:column; justify-content:space-between; }
 
-        .bento-item img, .bento-item video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+  .media-fill{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+  .media-placeholder{
+    position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+    color: var(--ink-faint); font-size:0.75rem; text-align:center; padding:20px;
+    background: radial-gradient(circle at 30% 20%, var(--accent-glow), transparent 60%), linear-gradient(160deg, rgba(255,255,255,0.03), rgba(255,255,255,0));
+  }
+  .media-placeholder .fname{ font-family: var(--f-display); font-size:0.8125rem; color: var(--ink-dim); letter-spacing:0.02em; }
+  .play-icon{ width:46px; height:46px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; }
 
-        .bento-item:hover img, .bento-item:hover video {
-            transform: scale(1.05);
-        }
+  .info-card .label{ font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color: var(--ink-faint); margin-bottom:6px; }
+  .info-card .value{ font-family: var(--f-display); font-size:1.1875rem; font-weight:600; }
 
-        .bento-text {
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-        }
+  .name-card h1{ font-size: clamp(1.875rem, 4.4vw, 3rem); font-weight:700; }
+  .name-card p{ color: var(--ink-dim); margin-top:10px; font-size:0.9375rem; max-width:520px; line-height:1.6; }
 
-        /* Specific Bento Placements */
-        .item-video { grid-column: span 2; grid-row: span 2; }
-        .item-text { grid-column: span 2; }
-        .item-photo1 { grid-column: span 1; }
-        .item-profile { grid-column: span 1; background: #111; }
+  /* ---------- About ---------- */
+  .about-head{ display:flex; align-items:center; gap:28px; margin-bottom:44px; }
+  .headshot{
+    position:relative; flex-shrink:0; width:112px; height:112px; border-radius:20px; overflow:hidden;
+  }
+  .headshot img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .headshot .media-placeholder{ border-radius:20px; padding:8px; }
+  .headshot .media-placeholder .fname{ font-size:0.625rem; }
+  .headshot .media-placeholder span:last-child{ display:none; }
 
-        /* Premium Buttons */
-        .btn-pill {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 32px;
-            background-color: var(--text-primary);
-            color: var(--bg-color);
-            font-family: 'Manrope', sans-serif;
-            font-weight: 500;
-            font-size: 14px;
-            text-decoration: none;
-            border-radius: 100px;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-            cursor: pointer;
-            margin-top: 20px;
-        }
+  .about-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:20px; }
+  .about-card{ padding:38px; }
+  .about-card .idx{ font-family: var(--f-display); font-size:0.8125rem; color: var(--accent-dim); letter-spacing:0.08em; margin-bottom:20px; display:block; transition: color 0.5s var(--ease); }
+  .about-card h3{ font-size:1.625rem; margin-bottom:16px; font-weight:700; }
+  .about-card p{ color: var(--ink-dim); line-height:1.7; font-size:0.9375rem; margin-bottom:22px; }
+  .tag-row{ display:flex; flex-wrap:wrap; gap:8px; }
+  .tag{ font-size:0.75rem; padding:7px 13px; border-radius:999px; border:1px solid var(--line); color: var(--ink-dim); }
 
-        .btn-pill:hover {
-            transform: scale(0.97);
-            opacity: 0.9;
-        }
+  .page-head{ margin-bottom:44px; }
+  .page-head h2{ font-size: clamp(1.875rem, 4vw, 2.75rem); font-weight:700; margin-bottom:14px; }
+  .page-head p{ color: var(--ink-dim); max-width:560px; line-height:1.7; font-size:0.9375rem; }
 
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-primary);
-            border: 1px solid var(--surface-border);
-        }
+  /* ---------- Experience ---------- */
+  .exp-timeline{ position:relative; display:flex; flex-direction:column; gap:20px; }
+  .exp-item{ position:relative; display:grid; grid-template-columns: 96px 1fr; gap:24px; padding:32px; }
+  .exp-item .exp-marker{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; }
+  .exp-num{ font-family: var(--f-display); font-size:0.8125rem; color: var(--accent-dim); letter-spacing:0.08em; transition: color 0.5s var(--ease); }
+  .exp-duration{ font-size:0.75rem; color: var(--ink-faint); line-height:1.5; }
+  .exp-status{
+    font-size:0.625rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:700;
+    color: var(--accent); border:1px solid var(--accent-dim); border-radius:999px; padding:4px 9px;
+    width:fit-content; transition: color 0.5s var(--ease), border-color 0.5s var(--ease);
+  }
+  .exp-item h3{ font-size:1.3125rem; font-weight:700; margin-bottom:4px; }
+  .exp-org{ font-size:0.875rem; color: var(--ink-dim); margin-bottom:6px; }
+  .exp-loc{ font-size:0.75rem; color: var(--ink-faint); margin-bottom:16px; }
+  .exp-desc{ color: var(--ink-dim); line-height:1.7; font-size:0.9375rem; margin-bottom:18px; }
 
-        .btn-outline:hover {
-            background-color: var(--surface-color);
-        }
+  @media (max-width: 700px){
+    .exp-item{ grid-template-columns: 1fr; gap:14px; padding:26px; }
+    .exp-item .exp-marker{ flex-direction:row; align-items:center; }
+  }
 
-        /* Cards for About & Works */
-        .aesthetic-card {
-            background: var(--surface-color);
-            border: 1px solid var(--surface-border);
-            border-radius: 24px;
-            padding: 40px;
-            transition: background 0.4s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+  /* ---------- Skills ---------- */
+  .skills-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:20px; }
+  .skill-card{ padding:34px; }
+  .skill-card .skill-icon{
+    width:38px; height:38px; border-radius:11px; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center; margin-bottom:20px;
+    color: var(--accent); transition: color 0.5s var(--ease);
+  }
+  .skill-card h3{ font-size:1.25rem; font-weight:700; margin-bottom:10px; }
+  .skill-card p{ color: var(--ink-dim); font-size:0.875rem; line-height:1.6; margin-bottom:20px; }
 
-        .aesthetic-card:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
+  @media (max-width: 1024px){
+    .skills-grid{ grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 700px){
+    .skills-grid{ grid-template-columns: 1fr; }
+  }
 
-        .works-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-        }
+  /* ---------- Works ---------- */
+  .works-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px; }
+  .work-card{ padding:30px; display:flex; flex-direction:column; justify-content:space-between; min-height:250px; cursor:pointer; }
+  .work-card .wk-top{ display:flex; justify-content:space-between; align-items:flex-start; }
+  .work-card .wk-num{ font-family: var(--f-display); color: var(--ink-faint); font-size:0.8125rem; }
+  .work-card .arrow{
+    width:34px; height:34px; border-radius:50%; border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    transition: transform 0.4s var(--ease), background 0.4s var(--ease);
+  }
+  .work-card:hover .arrow{ transform: rotate(45deg); background: var(--ink); color:#050505; }
+  .work-card h3{ font-size:1.3125rem; margin:20px 0 10px; font-weight:700; }
+  .work-card .wk-desc{ color: var(--ink-dim); font-size:0.875rem; line-height:1.6; }
+  .work-card .wk-type{ font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color: var(--accent-dim); margin-top:18px; transition: color 0.5s var(--ease); }
 
-        .tag {
-            display: inline-block;
-            padding: 6px 14px;
-            background: var(--surface-border);
-            border-radius: 100px;
-            font-size: 12px;
-            color: var(--text-primary);
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            width: fit-content;
-        }
+  /* ---------- Resume ---------- */
+  .resume-wrap{ display:flex; align-items:center; justify-content:center; min-height:56vh; }
+  .resume-card{ text-align:center; padding:64px 56px; max-width:520px; }
+  .resume-card h2{ font-size: clamp(1.75rem, 4vw, 2.5rem); margin-bottom:14px; font-weight:700; }
+  .resume-card p{ color: var(--ink-dim); margin-bottom:34px; line-height:1.7; font-size:0.9375rem; }
 
-        /* Attractive Contact Grid */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        
-        .contact-block {
-            background: var(--surface-color);
-            border: 1px solid var(--surface-border);
-            border-radius: 24px;
-            padding: 50px 40px;
-            text-decoration: none;
-            transition: all 0.4s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px; font-weight:700; font-size:0.875rem;
+    padding:16px 30px; border-radius:999px; background: var(--ink); color:#050505; border:none; cursor:pointer;
+    transition: transform 0.35s var(--ease), background 0.35s var(--ease);
+  }
+  .btn:hover{ transform: translateY(-3px); background: var(--accent); }
+  .btn-ghost{ background:transparent; color: var(--ink); border:1px solid var(--line); }
+  .btn-ghost:hover{ background: var(--glass-hover); }
 
-        .contact-block:hover {
-            background: var(--text-primary);
-            transform: translateY(-5px);
-        }
+  /* ---------- Contact ---------- */
+  .contact-grid{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap:20px; }
+  .contact-main{ padding:48px; }
+  .contact-main h2{ font-size: clamp(1.875rem, 4.4vw, 2.875rem); font-weight:700; margin-bottom:18px; }
+  .contact-main p{ color: var(--ink-dim); line-height:1.7; font-size:0.9375rem; max-width:440px; margin-bottom:30px; }
+  .contact-list{ display:flex; flex-direction:column; gap:0; }
+  .contact-row{ display:flex; align-items:center; justify-content:space-between; padding:26px 6px; border-top:1px solid var(--line); }
+  .contact-row:last-child{ border-bottom:1px solid var(--line); }
+  .contact-row .c-label{ font-size:0.6875rem; letter-spacing:0.1em; text-transform:uppercase; color: var(--ink-faint); }
+  .contact-row .c-value{ font-family: var(--f-display); font-size:1.0625rem; font-weight:600; }
+  .contact-side{ padding:38px; display:flex; flex-direction:column; justify-content:space-between; }
+  .contact-side .li-label{ color: var(--ink-dim); font-size:0.875rem; line-height:1.6; margin-bottom:26px; }
 
-        .contact-block:hover .contact-huge, .contact-block:hover .contact-sub {
-            color: var(--bg-color);
-        }
-        
-        .contact-block:hover .tag {
-            background: var(--bg-color);
-            color: var(--text-primary);
-            border: none;
-        }
+  .foot-note{ margin-top:80px; text-align:center; font-size:0.75rem; color: var(--ink-faint); letter-spacing:0.04em; }
 
-        .contact-huge {
-            font-size: clamp(30px, 4vw, 45px);
-            color: var(--text-primary);
-            line-height: 1.2;
-            transition: color 0.4s ease;
-        }
+  /* ---------- Theme customizer ---------- */
+  .customize-btn{
+    position:fixed; z-index:110;
+    bottom: calc(24px + env(safe-area-inset-bottom)); right: calc(24px + env(safe-area-inset-right));
+    width:52px; height:52px; border-radius:50%;
+    background: rgba(15,15,17,0.6); border:1px solid var(--line);
+    backdrop-filter: blur(20px) saturate(140%); -webkit-backdrop-filter: blur(20px) saturate(140%);
+    display:flex; align-items:center; justify-content:center; cursor:pointer;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+    transition: transform 0.4s var(--ease), background 0.4s var(--ease);
+  }
+  .customize-btn:hover{ transform: rotate(28deg) scale(1.05); }
+  .customize-btn svg{ stroke: var(--ink); }
 
-        .contact-sub {
-            font-size: 16px;
-            color: var(--text-secondary);
-            margin-top: 15px;
-            font-family: 'Manrope', sans-serif;
-            font-weight: 400;
-            transition: color 0.4s ease;
-        }
+  .panel-overlay{
+    position:fixed; inset:0; z-index:109; background:rgba(0,0,0,0.35);
+    opacity:0; pointer-events:none; transition: opacity 0.4s var(--ease);
+  }
+  .panel-overlay.open{ opacity:1; pointer-events:auto; }
 
-        /* Responsive Design */
-        @media (max-width: 900px) {
-            header { width: 90%; padding: 15px; border-radius: 20px; }
-            nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
-            .bento-grid { display: flex; flex-direction: column; }
-            .item-video, .item-text, .item-photo1, .item-profile { height: 300px; }
-            .item-text { height: auto; }
-        }
-    </style>
+  .customize-panel{
+    position:fixed; z-index:111;
+    bottom: calc(90px + env(safe-area-inset-bottom)); right: calc(24px + env(safe-area-inset-right));
+    width:308px; max-width:88vw; max-height:74vh; overflow-y:auto;
+    padding:24px; border-radius:24px;
+    background: rgba(12,12,14,0.78); border:1px solid var(--line);
+    backdrop-filter: blur(26px) saturate(150%); -webkit-backdrop-filter: blur(26px) saturate(150%);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+    transform: translateY(16px) scale(0.97); opacity:0; pointer-events:none;
+    transition: transform 0.45s var(--ease), opacity 0.4s var(--ease);
+  }
+  .customize-panel.open{ transform: translateY(0) scale(1); opacity:1; pointer-events:auto; }
+
+  .panel-title{ display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; }
+  .panel-title h4{ font-size:1rem; font-weight:700; }
+  .panel-close{ width:26px; height:26px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--ink-dim); background:transparent; }
+
+  .panel-group{ margin-bottom:20px; }
+  .panel-label{ font-size:0.6875rem; letter-spacing:0.08em; text-transform:uppercase; color: var(--ink-faint); margin-bottom:10px; display:block; }
+
+  .swatch-row{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .swatch{
+    width:26px; height:26px; border-radius:50%; cursor:pointer; border:2px solid transparent;
+    transition: transform 0.3s var(--ease), border-color 0.3s var(--ease);
+  }
+  .swatch:hover{ transform: scale(1.12); }
+  .swatch.active{ border-color: var(--ink); }
+  .swatch-custom{
+    width:26px; height:26px; border-radius:50%; padding:0; border:1px solid var(--line);
+    cursor:pointer; background:none; overflow:hidden;
+  }
+  .swatch-custom::-webkit-color-swatch-wrapper{ padding:0; }
+  .swatch-custom::-webkit-color-swatch{ border:none; border-radius:50%; }
+
+  .bg-swatch-row{ display:flex; gap:10px; flex-wrap:wrap; }
+  .bg-swatch{
+    width:40px; height:40px; border-radius:10px; cursor:pointer; border:2px solid transparent;
+    display:flex; align-items:flex-end; justify-content:flex-end; padding:4px;
+    transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+  }
+  .bg-swatch:hover{ transform: translateY(-2px); }
+  .bg-swatch.active{ border-color: var(--accent); }
+
+  .seg-row{ display:flex; gap:8px; }
+  .seg-btn{
+    flex:1; padding:9px 6px; text-align:center; font-size:0.75rem; font-weight:600;
+    border-radius:10px; border:1px solid var(--line); color: var(--ink-dim); background:transparent; cursor:pointer;
+    transition: background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease);
+  }
+  .seg-btn.active{ background: var(--ink); color:#050505; border-color: transparent; }
+
+  .panel-reset{
+    width:100%; padding:11px; border-radius:10px; border:1px solid var(--line);
+    background:transparent; color: var(--ink-dim); font-size:0.75rem; font-weight:600; cursor:pointer;
+    transition: background 0.3s var(--ease), color 0.3s var(--ease);
+  }
+  .panel-reset:hover{ background: var(--glass-hover); color: var(--ink); }
+  .panel-note{ font-size:0.6875rem; color: var(--ink-faint); line-height:1.5; margin-top:16px; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 1024px){
+    .bento{ grid-template-columns: repeat(4, 1fr); }
+    .bento-item.name-card{ grid-column: span 4; }
+    .bento-item.video-card{ grid-column: span 4; grid-row: span 1; min-height:340px; }
+    .bento-item.photo-card{ grid-column: span 2; }
+    .bento-item.info-card{ grid-column: span 2; }
+  }
+
+  @media (max-width: 700px){
+    nav{ top: calc(16px + env(safe-area-inset-top)); padding:6px; overflow-x:auto; }
+    nav .navlink{ padding:9px 13px; font-size:0.75rem; }
+    main{ padding:104px calc(20px + env(safe-area-inset-right)) 80px calc(20px + env(safe-area-inset-left)); }
+
+    .open-badge{ font-size:0.6875rem; border-radius:16px; padding:9px 14px; }
+
+    .bento{ grid-template-columns: repeat(2, 1fr); }
+    .bento-item.name-card{ grid-column: span 2; padding:28px; }
+    .bento-item.video-card{ grid-column: span 2; min-height:260px; }
+    .bento-item.photo-card{ grid-column: span 1; min-height:150px; }
+    .bento-item.info-card{ grid-column: span 1; }
+
+    .about-head{ flex-direction:column; align-items:flex-start; gap:18px; }
+    .about-grid{ grid-template-columns: 1fr; }
+    .works-grid{ grid-template-columns: 1fr; }
+    .contact-grid{ grid-template-columns: 1fr; }
+    .resume-card{ padding:44px 26px; }
+
+    .customize-btn{ width:46px; height:46px; }
+    .customize-panel{ right:16px; bottom: calc(78px + env(safe-area-inset-bottom)); width: calc(100vw - 32px); }
+  }
+
+  @media print{
+    nav, .customize-btn, .customize-panel, .panel-overlay, .ambient, .grain{ display:none !important; }
+    body{ background:#fff; color:#111; }
+    .section{ display:block !important; page-break-after: always; }
+    .glass{ background:#f5f5f5; border:1px solid #ddd; backdrop-filter:none; }
+    main{ padding:20px; max-width:100%; }
+    a{ color:#111; }
+  }
+</style>
 </head>
 <body>
 
-    <div class="ambient-glow"></div>
+<div class="ambient">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+</div>
+<div class="grain"></div>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a onclick="navigates('home')" class="nav-btn active-link">Home</a></li>
-                <li><a onclick="navigates('about')" class="nav-btn">About</a></li>
-                <li><a onclick="navigates('works')" class="nav-btn">Works</a></li>
-                <li><a onclick="navigates('resume')" class="nav-btn">Resume</a></li>
-                <li><a onclick="navigates('contact')" class="nav-btn">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<nav id="nav">
+  <div class="nav-pill" id="navPill"></div>
+  <div class="navlink active" data-target="home"><span>Home</span></div>
+  <div class="navlink" data-target="about"><span>About</span></div>
+  <div class="navlink" data-target="experience"><span>Experience</span></div>
+  <div class="navlink" data-target="skills"><span>Skills</span></div>
+  <div class="navlink" data-target="works"><span>Works</span></div>
+  <div class="navlink" data-target="resume"><span>Resume</span></div>
+  <div class="navlink" data-target="contact"><span>Contact</span></div>
+</nav>
 
-    <main>
-        <!-- HOME SECTION -->
-        <section id="home" class="active-section">
-            <h1 class="heading-huge">Mehul Deshmukh<br><span class="heading-italic">Creative & Clinical.</span></h1>
-            <p style="max-width: 500px; font-size: 18px;">Specializing in aesthetic visual storytelling, high-end photography, and specialized medical writing. Based in the intersection of art and science.</p>
-            
-            <div class="bento-grid">
-                <!-- Large Video Bento Box -->
-                <div class="bento-item item-video">
-                    <video src="reel.mp4" autoplay loop muted playsinline></video>
-                </div>
-                
-                <!-- Text Bento Box -->
-                <div class="bento-item item-text bento-text">
-                    <div>
-                        <div class="tag">Overview</div>
-                        <h3 style="font-size: 24px; margin-bottom: 15px; color: var(--text-primary);">A multidisciplinary approach to content.</h3>
-                        <p>Combining a deep understanding of healthcare with premium digital marketing and aesthetic media creation.</p>
-                    </div>
-                    <a onclick="navigates('works')" class="btn-pill btn-outline" style="width: fit-content; margin-top: 0;">Explore Works</a>
-                </div>
+<main>
 
-                <!-- Photo 1 Bento Box (Cinematic Shot) -->
-                <div class="bento-item item-photo1">
-                    <img src="photo1.jpg" alt="Aesthetic Work">
-                </div>
+  <!-- HOME -->
+  <section class="section active" id="home">
+    <span class="eyebrow">Portfolio — 2026</span>
+    <div class="open-badge">
+      <span class="pulse-dot"></span>
+      Open to: Content Writing · Medical Writing · Social Media · Photography
+    </div>
+    <h1 class="hero-tag">Creative <em>&</em> Clinical.</h1>
+    <p class="hero-sub">I am a Content Creator & Medical Writer, working at the point where visual storytelling meets health science. Open to internships and hybrid or part-time roles.</p>
 
-                <!-- Profile Picture Bento Box (Your Headshot) -->
-                <div class="bento-item item-profile">
-                    <!-- Loading profile.png.PNG directly from your GitHub -->
-                    <img src="profile.png.PNG" alt="Mehul Deshmukh" style="object-position: center top;">
-                </div>
-            </div>
-        </section>
+    <div class="bento">
+      <div class="glass bento-item name-card">
+        <h1>Mehul Deshmukh</h1>
+        <p>Bachelor of Physiotherapy student at Jain University, Bengaluru — building a practice around aesthetic visual storytelling, cinematic photography, and specialized medical writing.</p>
+      </div>
 
-        <!-- ABOUT SECTION -->
-        <section id="about">
-            <h2 class="section-title">Who I Am.</h2>
-            <div class="aesthetic-card" style="max-width: 800px; padding: 60px;">
-                <div class="tag">Brief Bio</div>
-                <h3 style="font-size: 32px; margin-bottom: 25px; line-height: 1.3;">I am a versatile creator bridging the gap between clinical science and visual aesthetics.</h3>
-                <p style="font-size: 18px; margin-bottom: 20px;">Currently pursuing my Bachelor of Physiotherapy (BPT) at Jain University, I leverage my strong healthcare foundation to write authoritative, specialized medical content that resonates with modern audiences.</p>
-                <p style="font-size: 18px;">Beyond the clinic, I am a passionate cinematic photographer and digital marketer. From high-energy event coverage to AI-assisted brand aesthetics, I engineer media that commands attention and connects with online communities.</p>
-            </div>
-        </section>
+      <div class="glass bento-item video-card" id="videoSlot">
+        <video class="media-fill" id="reelVideo" src="reel.mp4" autoplay muted loop playsinline></video>
+        <div class="media-placeholder" id="videoPlaceholder">
+          <div class="play-icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 2.5L13 8L4 13.5V2.5Z" fill="#ededf0"/></svg>
+          </div>
+          <span class="fname">reel.mp4</span>
+          <span>Showreel not loaded</span>
+        </div>
+      </div>
 
-        <!-- WORKS SECTION -->
-        <section id="works">
-            <h2 class="section-title">Selected Works.</h2>
-            <div class="works-grid">
-                
-                <!-- Medical Article -->
-                <div class="aesthetic-card">
-                    <div>
-                        <div class="tag">Medical Writing</div>
-                        <h3 style="font-size: 24px; margin-bottom: 15px;">Healthcare Comm.</h3>
-                        <p>Insights exploring the intersection of modern healthcare knowledge and digital strategy.</p>
-                    </div>
-                    <a href="Healthcare_Article.pdf" target="_blank" class="btn-pill btn-outline">Read Article</a>
-                </div>
+      <div class="glass bento-item photo-card" id="photoSlot1">
+        <img class="media-fill" id="photo1Img" src="photo1.jpg" alt="Photography work by Mehul Deshmukh">
+        <div class="media-placeholder" id="photo1Placeholder">
+          <span class="fname">photo1.jpg</span>
+          <span>Image not loaded</span>
+        </div>
+      </div>
 
-                <!-- Plastics Part 1 -->
-                <div class="aesthetic-card">
-                    <div>
-                        <div class="tag">Sustainability / 01</div>
-                        <h3 style="font-size: 24px; margin-bottom: 15px;">Plastics For Change</h3>
-                        <p>Part one: Analyzing environmental impact and sustainability content matrices.</p>
-                    </div>
-                    <a href="Plastics_Article_1.pdf" target="_blank" class="btn-pill btn-outline">Read Part 1</a>
-                </div>
+      <div class="glass bento-item info-card">
+        <div>
+          <div class="label">Based in</div>
+          <div class="value">Bengaluru, IN</div>
+        </div>
+        <div>
+          <div class="label">Focus</div>
+          <div class="value">Med Writing / Visuals</div>
+        </div>
+      </div>
 
-                <!-- Plastics Part 2 -->
-                <div class="aesthetic-card">
-                    <div>
-                        <div class="tag">Sustainability / 02</div>
-                        <h3 style="font-size: 24px; margin-bottom: 15px;">Plastics For Change</h3>
-                        <p>Part two: Further exploration into sustainable practices and brand aesthetics.</p>
-                    </div>
-                    <a href="Plastics_Article_2.pdf" target="_blank" class="btn-pill btn-outline">Read Part 2</a>
-                </div>
+      <div class="glass bento-item photo-card" id="photoSlot2">
+        <img class="media-fill" id="photo2Img" src="photo2.jpg" alt="Photography work by Mehul Deshmukh">
+        <div class="media-placeholder" id="photo2Placeholder">
+          <span class="fname">photo2.jpg</span>
+          <span>Image not loaded</span>
+        </div>
+      </div>
 
-                <!-- Visual Media Drive (Future-Proofed) -->
-                <div class="aesthetic-card">
-                    <div>
-                        <div class="tag">Visual Portfolio</div>
-                        <h3 style="font-size: 24px; margin-bottom: 15px;">Cinematic Archive</h3>
-                        <p>An ever-growing Google Drive portfolio featuring event photography, video edits, and my latest sample works.</p>
-                    </div>
-                    <a href="https://drive.google.com/drive/folders/13ro8TUWFXnzUNNAsq1b7PyzdWH94VuHg" target="_blank" class="btn-pill btn-outline">Open Drive</a>
-                </div>
+      <div class="glass bento-item info-card">
+        <div>
+          <div class="label">Currently</div>
+          <div class="value">BPT, Jain University</div>
+        </div>
+        <div>
+          <div class="label">Looking for</div>
+          <div class="value">Internships / Hybrid Roles</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            </div>
-        </section>
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="about-head">
+      <div class="headshot glass" id="headshotSlot">
+        <img id="headshotImg" src="headshot.jpg" alt="Professional headshot of Mehul Deshmukh">
+        <div class="media-placeholder" id="headshotPlaceholder">
+          <span class="fname">headshot.jpg</span>
+          <span>Photo not loaded</span>
+        </div>
+      </div>
+      <div class="page-head" style="margin-bottom:0;">
+        <span class="eyebrow">About</span>
+        <h2>Two disciplines, one practice.</h2>
+        <p>Currently pursuing a Bachelor of Physiotherapy (BPT) at Jain University. I live at the intersection of medical science and digital aesthetics — specializing in cinematic photography and specialized medical writing.</p>
+      </div>
+    </div>
 
-        <!-- RESUME SECTION -->
-        <section id="resume">
-            <div class="aesthetic-card" style="text-align: center; max-width: 800px; margin: 0 auto; padding: 80px 40px;">
-                <h2 class="section-title" style="margin-bottom: 20px;">Professional Profile.</h2>
-                <p style="margin-bottom: 40px; font-size: 18px; max-width: 500px; margin-left: auto; margin-right: auto;">Access my complete academic background, technical proficiencies, and creative experience.</p>
-                <a href="Mehul_Deshmukh_Resume.docx" download class="btn-pill">Download Curriculum Vitae</a>
-            </div>
-        </section>
+    <div class="about-grid">
+      <div class="glass about-card">
+        <span class="idx">01 / Foundation</span>
+        <h3>Medical Science</h3>
+        <p>My academic base is physiotherapy — a field that demands precision, evidence-based reasoning, and the ability to translate clinical detail into language people actually understand. That grounding shapes how I approach medical and health writing: accurate first, readable always.</p>
+        <div class="tag-row">
+          <span class="tag">Health Writing</span>
+          <span class="tag">Clinical Accuracy</span>
+          <span class="tag">Patient Communication</span>
+          <span class="tag">Research-Backed Content</span>
+        </div>
+      </div>
 
-        <!-- CONTACT SECTION (UPGRADED) -->
-        <section id="contact">
-            <h2 class="section-title">Let's Connect.</h2>
-            <div class="contact-grid">
-                
-                <!-- Email Block -->
-                <a href="mailto:mehuldeshmukh106@gmail.com" class="contact-block">
-                    <div class="tag">Start a Project</div>
-                    <h3 class="contact-huge">Email<br>Mehul</h3>
-                    <p class="contact-sub">mehuldeshmukh106@gmail.com</p>
-                </a>
+      <div class="glass about-card">
+        <span class="idx">02 / Expression</span>
+        <h3>Visual Aesthetics</h3>
+        <p>Outside the classroom, I build with cameras and editing timelines. Cinematic photography, motion editing, and design work that's meant to hold attention without losing meaning — the same discipline that clinical work demands, applied to a different canvas.</p>
+        <div class="tag-row">
+          <span class="tag">Cinematic Photography</span>
+          <span class="tag">CapCut</span>
+          <span class="tag">Canva Certified</span>
+          <span class="tag">AI-Assisted Production</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                <!-- Phone Block -->
-                <a href="tel:+918109007299" class="contact-block">
-                    <div class="tag">Direct Line</div>
-                    <h3 class="contact-huge">Call<br>Mehul</h3>
-                    <p class="contact-sub">+91 8109007299</p>
-                </a>
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="page-head">
+      <span class="eyebrow">Experience</span>
+      <h2>What I've worked on so far.</h2>
+      <p>A mix of freelance content work and hands-on event roles during my time at Parul University.</p>
+    </div>
 
-                <!-- LinkedIn Block -->
-                <a href="https://www.linkedin.com/in/mehul-deshmukh-663390201" target="_blank" class="contact-block" style="grid-column: 1 / -1; align-items: center; text-align: center;">
-                    <div class="tag">Professional Network</div>
-                    <h3 class="contact-huge" style="margin-bottom: 10px;">Connect on<br>LinkedIn</h3>
-                    <p class="contact-sub">View my professional history and endorsements.</p>
-                </a>
+    <div class="exp-timeline">
+      <div class="glass exp-item">
+        <div class="exp-marker">
+          <span class="exp-num">01</span>
+          <span class="exp-status">Ongoing</span>
+          <span class="exp-duration">3+ months<br>Remote</span>
+        </div>
+        <div>
+          <h3>Freelance Content Writer &amp; Social Media Manager</h3>
+          <div class="exp-org">Self-employed</div>
+          <div class="exp-loc">Remote</div>
+          <p class="exp-desc">Writing and social media support on a freelance basis — content pieces, captions, and short-form copy, along with basic scheduling and page management for clients.</p>
+          <div class="tag-row">
+            <span class="tag">Content Writing</span>
+            <span class="tag">Social Media Management</span>
+            <span class="tag">Copywriting</span>
+          </div>
+        </div>
+      </div>
 
-            </div>
-        </section>
-    </main>
+      <div class="glass exp-item">
+        <div class="exp-marker">
+          <span class="exp-num">02</span>
+          <span class="exp-duration">Feb 2026<br>1 month</span>
+        </div>
+        <div>
+          <h3>Content Writer &amp; Media Team Member</h3>
+          <div class="exp-org">Parul University</div>
+          <div class="exp-loc">Vadodara, Gujarat, India · On-site</div>
+          <p class="exp-desc">Contributed to the content and media team for PRAMAAN Forensic Fest 2026 at Parul University. Created written content for event promotions and supported the team's media coverage on the ground.</p>
+          <div class="tag-row">
+            <span class="tag">Writing</span>
+            <span class="tag">Video Editing</span>
+            <span class="tag">Event Media</span>
+          </div>
+        </div>
+      </div>
 
-    <script>
-        function navigates(sectionId) {
-            // Hide all sections, remove animations
-            const sections = document.querySelectorAll('section');
-            sections.forEach(sec => {
-                sec.classList.remove('active-section');
-                sec.style.animation = 'none'; // reset animation
-            });
-            
-            // Force reflow to restart animation
-            void document.body.offsetWidth;
-            
-            // Show target section and apply fade-up
-            const target = document.getElementById(sectionId);
-            target.classList.add('active-section');
-            target.style.animation = 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards';
-            
-            // Update Navigation Pill
-            const navLinks = document.querySelectorAll('.nav-btn');
-            navLinks.forEach(link => link.classList.remove('active-link'));
-            event.target.classList.add('active-link');
-            
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
+      <div class="glass exp-item">
+        <div class="exp-marker">
+          <span class="exp-num">03</span>
+          <span class="exp-duration">Oct 2025<br>1 month</span>
+        </div>
+        <div>
+          <h3>Social Media Coordinator</h3>
+          <div class="exp-org">Parul University</div>
+          <div class="exp-loc">Vadodara, Gujarat, India · On-site</div>
+          <p class="exp-desc">Coordinated activities for Samadhan 2025 – Forensic Solutions Expo. Assisted in organizing and executing a university-level forensic science event, handling social media coverage alongside on-site coordination.</p>
+          <div class="tag-row">
+            <span class="tag">Social Media Management</span>
+            <span class="tag">Video Editing</span>
+            <span class="tag">Event Coordination</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="page-head">
+      <span class="eyebrow">Skills</span>
+      <h2>What I bring to the table.</h2>
+      <p>Three pillars that cover the four things I'm actively pursuing: content writing, medical writing, social media management, and photography.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="glass skill-card">
+        <div class="skill-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 14L2 11.5L10.5 3L13 5.5L4.5 14H2Z" stroke="currentColor" stroke-width="1.3"/><path d="M9 4.5L11.5 7" stroke="currentColor" stroke-width="1.3"/></svg>
+        </div>
+        <h3>Writing</h3>
+        <p>Content built to be accurate first and readable always — from health communication to brand copy.</p>
+        <div class="tag-row">
+          <span class="tag">Content Writing</span>
+          <span class="tag">Medical & Health Writing</span>
+          <span class="tag">Clinical Accuracy</span>
+          <span class="tag">Patient Communication</span>
+          <span class="tag">Copywriting</span>
+          <span class="tag">Research-Backed Content</span>
+        </div>
+      </div>
+
+      <div class="glass skill-card">
+        <div class="skill-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.3"/><circle cx="12" cy="4" r="2" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="12" r="2" stroke="currentColor" stroke-width="1.3"/><path d="M5.7 5.2L7 10.3M10.3 5.2L9 10.3" stroke="currentColor" stroke-width="1.2"/></svg>
+        </div>
+        <h3>Social & Strategy</h3>
+        <p>Planning and running social presence for events and campaigns, start to finish.</p>
+        <div class="tag-row">
+          <span class="tag">Social Media Management</span>
+          <span class="tag">Campaign Strategy</span>
+          <span class="tag">Event Coordination</span>
+          <span class="tag">Event Media</span>
+        </div>
+      </div>
+
+      <div class="glass skill-card">
+        <div class="skill-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="4" width="9" height="8" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M11 6.5L14 5V11L11 9.5" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Visual Production</h3>
+        <p>Cinematic photography and motion editing, shaped by the same discipline as the writing.</p>
+        <div class="tag-row">
+          <span class="tag">Cinematic Photography</span>
+          <span class="tag">Video Editing</span>
+          <span class="tag">CapCut</span>
+          <span class="tag">Canva Certified</span>
+          <span class="tag">AI-Assisted Production</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKS -->
+  <section class="section" id="works">
+    <div class="page-head">
+      <span class="eyebrow">Selected Works</span>
+      <h2>Writing and visuals, side by side.</h2>
+      <p>A mix of published medical and social communication work, alongside a running archive of new projects as they come in.</p>
+    </div>
+
+    <div class="works-grid">
+      <a class="glass work-card" href="Healthcare_Article.pdf" target="_blank" rel="noopener">
+        <div class="wk-top">
+          <span class="wk-num">01</span>
+          <span class="arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.4"/></svg></span>
+        </div>
+        <div>
+          <h3>Healthcare Communication</h3>
+          <p class="wk-desc">A written piece exploring clear, human communication in healthcare settings.</p>
+          <span class="wk-type">PDF — Opens in new tab</span>
+        </div>
+      </a>
+
+      <a class="glass work-card" href="Plastics_Article.pdf" target="_blank" rel="noopener">
+        <div class="wk-top">
+          <span class="wk-num">02</span>
+          <span class="arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.4"/></svg></span>
+        </div>
+        <div>
+          <h3>Plastics For Change — Campaign Strategy</h3>
+          <p class="wk-desc">The LinkedIn campaign strategy piece developed for Plastics For Change.</p>
+          <span class="wk-type">PDF — Opens in new tab</span>
+        </div>
+      </a>
+
+      <a class="glass work-card" href="Plastics_Article_2.pdf" target="_blank" rel="noopener">
+        <div class="wk-top">
+          <span class="wk-num">03</span>
+          <span class="arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.4"/></svg></span>
+        </div>
+        <div>
+          <h3>Plastics For Change — Impact Piece</h3>
+          <p class="wk-desc">A second article written for Plastics For Change, covering their impact and mission.</p>
+          <span class="wk-type">PDF — Opens in new tab</span>
+        </div>
+      </a>
+
+      <a class="glass work-card" href="https://drive.google.com/drive/folders/13ro8TUWFXnzUNNAsq1b7PyzdWH94VuHg" target="_blank" rel="noopener">
+        <div class="wk-top">
+          <span class="wk-num">04</span>
+          <span class="arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.4"/></svg></span>
+        </div>
+        <div>
+          <h3>Project Archive</h3>
+          <p class="wk-desc">An ongoing Drive folder of additional work — photography, film, and future pieces added as they're finished.</p>
+          <span class="wk-type">Google Drive — Opens in new tab</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section class="section" id="resume">
+    <div class="resume-wrap">
+      <div class="glass resume-card">
+        <span class="eyebrow" style="justify-content:center; display:flex;">Resume</span>
+        <h2>Let's put it on paper.</h2>
+        <p>A complete overview of my education, skills, and experience across medical writing, content, and social media.</p>
+        <a class="btn" href="Mehul_Deshmukh_Resume.docx" download>
+          Download Resume
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1V9M7 9L3.5 5.5M7 9L10.5 5.5M2 12H12" stroke="#050505" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="page-head">
+      <span class="eyebrow">Contact</span>
+      <h2>Get in touch.</h2>
+      <p>Open to internships and collaborations across content writing, medical writing, social media management, and photography.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="glass contact-main">
+        <div class="contact-list">
+          <div class="contact-row">
+            <span class="c-label">Email</span>
+            <a class="c-value" href="mailto:mehuldeshmukh106@gmail.com">mehuldeshmukh106@gmail.com</a>
+          </div>
+          <div class="contact-row">
+            <span class="c-label">Phone</span>
+            <a class="c-value" href="tel:+918109007299">+91 8109007299</a>
+          </div>
+          <div class="contact-row">
+            <span class="c-label">Location</span>
+            <span class="c-value">Bengaluru, India</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass contact-side">
+        <div>
+          <div class="eyebrow">LinkedIn</div>
+          <p class="li-label">Connect for internships, freelance work, or just to talk shop on content and healthcare.</p>
+        </div>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/mehul-deshmukh-663390201" target="_blank" rel="noopener">
+          View LinkedIn
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H4M11 3V10" stroke="currentColor" stroke-width="1.4"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot-note">© 2026 Mehul Deshmukh — Bengaluru</div>
+</main>
+
+<!-- Theme customizer -->
+<div class="panel-overlay" id="panelOverlay"></div>
+<button class="customize-btn" id="customizeBtn" aria-label="Customize theme">
+  <svg width="19" height="19" viewBox="0 0 20 20" fill="none" stroke-width="1.5"><circle cx="10" cy="10" r="7"/><circle cx="10" cy="6.2" r="1"/><circle cx="13" cy="10.8" r="1"/><circle cx="7" cy="10.8" r="1"/></svg>
+</button>
+
+<div class="customize-panel" id="customizePanel">
+  <div class="panel-title">
+    <h4>Customize</h4>
+    <button class="panel-close" id="panelClose" aria-label="Close">✕</button>
+  </div>
+
+  <div class="panel-group">
+    <span class="panel-label">Accent Colour</span>
+    <div class="swatch-row" id="accentSwatches">
+      <div class="swatch active" data-color="#b9aaff" style="background:#b9aaff;"></div>
+      <div class="swatch" data-color="#9fd8ff" style="background:#9fd8ff;"></div>
+      <div class="swatch" data-color="#ffb4c6" style="background:#ffb4c6;"></div>
+      <div class="swatch" data-color="#ffcf86" style="background:#ffcf86;"></div>
+      <div class="swatch" data-color="#a8e6c9" style="background:#a8e6c9;"></div>
+      <input type="color" class="swatch-custom" id="customColor" value="#b9aaff" aria-label="Custom accent colour">
+    </div>
+  </div>
+
+  <div class="panel-group">
+    <span class="panel-label">Background</span>
+    <div class="bg-swatch-row" id="bgSwatches">
+      <div class="bg-swatch active" data-bg="#050505" style="background:#050505;" title="Onyx"></div>
+      <div class="bg-swatch" data-bg="#0d0d10" style="background:#0d0d10;" title="Charcoal"></div>
+      <div class="bg-swatch" data-bg="#060812" style="background:#060812;" title="Midnight"></div>
+      <div class="bg-swatch" data-bg="#0c0710" style="background:#0c0710;" title="Plum"></div>
+      <div class="bg-swatch" data-bg="#0a0806" style="background:#0a0806;" title="Espresso"></div>
+    </div>
+  </div>
+
+  <div class="panel-group">
+    <span class="panel-label">Typeface</span>
+    <div class="seg-row" id="fontToggle">
+      <button class="seg-btn active" data-font="editorial">Editorial</button>
+      <button class="seg-btn" data-font="modern">Modern</button>
+    </div>
+  </div>
+
+  <div class="panel-group">
+    <span class="panel-label">Text Size</span>
+    <div class="seg-row" id="sizeToggle">
+      <button class="seg-btn" data-size="93">S</button>
+      <button class="seg-btn active" data-size="100">M</button>
+      <button class="seg-btn" data-size="108">L</button>
+    </div>
+  </div>
+
+  <button class="panel-reset" id="panelReset">Reset to default</button>
+  <p class="panel-note">Preferences apply live to this visit and reset when the page reloads.</p>
+</div>
+
+<script>
+  // ----- SPA Navigation -----
+  const navlinks = document.querySelectorAll('.navlink');
+  const sections = document.querySelectorAll('.section');
+  const navPill = document.getElementById('navPill');
+
+  function movePill(el){
+    const navRect = el.parentElement.getBoundingClientRect();
+    const rect = el.getBoundingClientRect();
+    navPill.style.left = (rect.left - navRect.left) + 'px';
+    navPill.style.width = rect.width + 'px';
+  }
+
+  function setActive(target){
+    navlinks.forEach(l => l.classList.toggle('active', l.dataset.target === target));
+    sections.forEach(s => s.classList.toggle('active', s.id === target));
+    const activeLink = document.querySelector('.navlink[data-target="' + target + '"]');
+    if(activeLink) movePill(activeLink);
+  }
+
+  navlinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const target = link.dataset.target;
+      setActive(target);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      history.replaceState(null, '', '#' + target);
+    });
+  });
+
+  window.addEventListener('load', () => {
+    const initial = (location.hash || '#home').replace('#','');
+    const valid = document.getElementById(initial) ? initial : 'home';
+    setActive(valid);
+  });
+
+  window.addEventListener('resize', () => {
+    const current = document.querySelector('.navlink.active');
+    if(current) movePill(current);
+  });
+
+  // ----- Graceful media fallback -----
+  function bindMediaFallback(mediaEl, placeholderEl, isVideo){
+    if(!mediaEl) return;
+    const hide = () => { mediaEl.style.display = 'none'; if(placeholderEl) placeholderEl.style.display = 'flex'; };
+    if(isVideo){
+      mediaEl.addEventListener('error', hide);
+      mediaEl.addEventListener('stalled', () => { if(mediaEl.readyState === 0) hide(); });
+      setTimeout(() => { if(mediaEl.readyState === 0) hide(); }, 1800);
+    } else {
+      mediaEl.addEventListener('error', hide);
+    }
+  }
+  bindMediaFallback(document.getElementById('reelVideo'), document.getElementById('videoPlaceholder'), true);
+  bindMediaFallback(document.getElementById('photo1Img'), document.getElementById('photo1Placeholder'), false);
+  bindMediaFallback(document.getElementById('photo2Img'), document.getElementById('photo2Placeholder'), false);
+  bindMediaFallback(document.getElementById('headshotImg'), document.getElementById('headshotPlaceholder'), false);
+
+  // ----- Theme customizer -----
+  const root = document.documentElement;
+  const customizeBtn = document.getElementById('customizeBtn');
+  const customizePanel = document.getElementById('customizePanel');
+  const panelOverlay = document.getElementById('panelOverlay');
+  const panelClose = document.getElementById('panelClose');
+  const themeColorMeta = document.getElementById('themeColorMeta');
+
+  function togglePanel(open){
+    customizePanel.classList.toggle('open', open);
+    panelOverlay.classList.toggle('open', open);
+  }
+  customizeBtn.addEventListener('click', () => togglePanel(!customizePanel.classList.contains('open')));
+  panelClose.addEventListener('click', () => togglePanel(false));
+  panelOverlay.addEventListener('click', () => togglePanel(false));
+
+  function hexToRgba(hex, alpha){
+    const h = hex.replace('#','');
+    const bigint = parseInt(h.length === 3 ? h.split('').map(c=>c+c).join('') : h, 16);
+    const r = (bigint >> 16) & 255, g = (bigint >> 8) & 255, b = bigint & 255;
+    return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+  }
+
+  function setAccent(hex){
+    root.style.setProperty('--accent', hex);
+    root.style.setProperty('--accent-dim', hexToRgba(hex, 0.5));
+    root.style.setProperty('--accent-glow', hexToRgba(hex, 0.16));
+    document.getElementById('customColor').value = hex;
+  }
+
+  document.getElementById('accentSwatches').addEventListener('click', (e) => {
+    const sw = e.target.closest('.swatch');
+    if(!sw || !sw.dataset.color) return;
+    document.querySelectorAll('#accentSwatches .swatch').forEach(s => s.classList.remove('active'));
+    sw.classList.add('active');
+    setAccent(sw.dataset.color);
+  });
+  document.getElementById('customColor').addEventListener('input', (e) => {
+    document.querySelectorAll('#accentSwatches .swatch').forEach(s => s.classList.remove('active'));
+    setAccent(e.target.value);
+  });
+
+  document.getElementById('bgSwatches').addEventListener('click', (e) => {
+    const sw = e.target.closest('.bg-swatch');
+    if(!sw) return;
+    document.querySelectorAll('.bg-swatch').forEach(s => s.classList.remove('active'));
+    sw.classList.add('active');
+    root.style.setProperty('--bg', sw.dataset.bg);
+    themeColorMeta.setAttribute('content', sw.dataset.bg);
+  });
+
+  document.getElementById('fontToggle').addEventListener('click', (e) => {
+    const btn = e.target.closest('.seg-btn');
+    if(!btn) return;
+    document.querySelectorAll('#fontToggle .seg-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    if(btn.dataset.font === 'modern'){
+      root.style.setProperty('--f-display', "'Space Grotesk', sans-serif");
+      root.style.setProperty('--f-body', "'Inter', sans-serif");
+    } else {
+      root.style.setProperty('--f-display', "'Syne', sans-serif");
+      root.style.setProperty('--f-body', "'Manrope', sans-serif");
+    }
+  });
+
+  document.getElementById('sizeToggle').addEventListener('click', (e) => {
+    const btn = e.target.closest('.seg-btn');
+    if(!btn) return;
+    document.querySelectorAll('#sizeToggle .seg-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.documentElement.style.fontSize = btn.dataset.size + '%';
+  });
+
+  document.getElementById('panelReset').addEventListener('click', () => {
+    root.style.removeProperty('--accent');
+    root.style.removeProperty('--accent-dim');
+    root.style.removeProperty('--accent-glow');
+    root.style.removeProperty('--bg');
+    root.style.removeProperty('--f-display');
+    root.style.removeProperty('--f-body');
+    document.documentElement.style.fontSize = '100%';
+    themeColorMeta.setAttribute('content', '#050505');
+
+    document.querySelectorAll('#accentSwatches .swatch').forEach(s => s.classList.remove('active'));
+    document.querySelector('#accentSwatches .swatch[data-color="#b9aaff"]').classList.add('active');
+    document.getElementById('customColor').value = '#b9aaff';
+
+    document.querySelectorAll('.bg-swatch').forEach(s => s.classList.remove('active'));
+    document.querySelector('.bg-swatch[data-bg="#050505"]').classList.add('active');
+
+    document.querySelectorAll('#fontToggle .seg-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('#fontToggle .seg-btn[data-font="editorial"]').classList.add('active');
+
+    document.querySelectorAll('#sizeToggle .seg-btn').forEach(b => b.classList.remove('active'));
+    document.querySelector('#sizeToggle .seg-btn[data-size="100"]').classList.add('active');
+  });
+</script>
+
 </body>
 </html>
