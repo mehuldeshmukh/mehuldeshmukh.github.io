@@ -3,302 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mehul Deshmukh | Bio-Digital Portfolio</title>
-    <!-- Modern, Tech-Focused Fonts -->
+    <title>Mehul Deshmukh | Aesthetic Portfolio</title>
+    <!-- Premium Fonts: Syne for Display, Manrope for Body -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Outfit:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap');
 
         :root {
-            --bio-color: #00E5FF; /* Cyan/Teal Medical Glow */
-            --bg-dark: #050914; /* Deep Lab Dark */
-            --glass-bg: rgba(0, 229, 255, 0.03);
-            --glass-border: rgba(0, 229, 255, 0.15);
-            --text-main: #E2E8F0;
-            --text-muted: #94A3B8;
+            --bg-color: #050505;
+            --surface-color: rgba(255, 255, 255, 0.03);
+            --surface-border: rgba(255, 255, 255, 0.08);
+            --text-primary: #ffffff;
+            --text-secondary: #999999;
+            --accent: #d4c4f5; /* Subtle aesthetic lavender/silver */
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
+            -webkit-font-smoothing: antialiased;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Manrope', sans-serif;
             overflow-x: hidden;
             min-height: 100vh;
         }
 
-        /* Abstract Cellular / Pulse Background */
-        .bio-background {
+        /* Ambient Premium Glow Background */
+        .ambient-glow {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(212, 196, 245, 0.05) 0%, rgba(5, 5, 5, 0) 70%);
+            filter: blur(80px);
             z-index: -1;
-            background: 
-                radial-gradient(circle at 15% 50%, rgba(0, 229, 255, 0.05), transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(0, 229, 255, 0.04), transparent 25%);
-            background-size: cover;
-            animation: pulse-bg 8s infinite alternate;
-        }
-
-        /* Grid Overlay (Microscope aesthetic) */
-        .bio-background::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: 40px 40px;
+            animation: breathe 10s ease-in-out infinite alternate;
             pointer-events: none;
         }
 
-        @keyframes pulse-bg {
-            0% { opacity: 0.5; transform: scale(1); }
-            100% { opacity: 1; transform: scale(1.05); }
+        @keyframes breathe {
+            0% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+            100% { transform: translateX(-50%) scale(1.1); opacity: 1; }
         }
 
-        /* Heartbeat Animation for specific elements */
-        @keyframes heartbeat {
-            0% { transform: scale(1); }
-            15% { transform: scale(1.05); }
-            30% { transform: scale(1); }
-            45% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        /* Navigation (Medical Dashboard Style) */
+        /* Floating Pill Navigation */
         header {
             position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px 5%;
-            background: rgba(5, 9, 20, 0.8);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--surface-border);
+            border-radius: 100px;
+            padding: 10px 25px;
             z-index: 1000;
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--text-main);
-            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 8px;
-        }
-        
-        /* Little heartbeat icon next to logo */
-        .logo::before {
-            content: '♥';
-            color: var(--bio-color);
-            font-size: 20px;
-            animation: heartbeat 2s infinite;
+            justify-content: center;
         }
 
-        nav ul { display: flex; list-style: none; gap: 30px; flex-wrap: wrap; }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
         nav ul li a {
-            color: var(--text-muted);
+            color: var(--text-secondary);
             text-decoration: none;
             font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 2px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
             cursor: pointer;
-            transition: 0.3s;
-            padding: 5px 10px;
-            border-radius: 4px;
+            transition: all 0.4s ease;
+            padding: 8px 12px;
+            border-radius: 100px;
         }
+
         nav ul li a:hover, nav ul li a.active-link {
-            color: var(--bio-color);
-            background: var(--glass-bg);
-            box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+            color: var(--bg-color);
+            background-color: var(--text-primary);
         }
 
-        /* Theme Customizer (DNA Strands) */
-        .theme-customizer {
-            position: fixed;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 999;
-            background: rgba(0,0,0,0.4);
-            padding: 15px 10px;
-            border-radius: 30px;
-            border: 1px solid var(--glass-border);
-            backdrop-filter: blur(5px);
-        }
-        .color-btn {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: 0.3s;
-            box-shadow: 0 0 10px rgba(255,255,255,0.1);
-        }
-        .color-btn:hover { transform: scale(1.3); border-color: #fff; }
-
-        /* Section Layout */
+        /* Section Layout & Animations */
         section {
             display: none;
-            padding: 140px 8% 80px;
+            padding: 180px 8% 100px;
             min-height: 100vh;
-            animation: fadeIn 0.5s ease-out;
+            animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform: translateY(20px);
         }
-        section.active-section { display: block; }
+        section.active-section {
+            display: block;
+        }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.98); }
-            to { opacity: 1; transform: scale(1); }
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+        }
+
+        .heading-huge {
+            font-size: clamp(40px, 8vw, 90px);
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+        
+        .heading-italic {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--text-secondary);
         }
 
         .section-title {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 35px;
-            margin-bottom: 40px;
-            color: var(--text-main);
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .section-title::before {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 2px;
-            background: var(--bio-color);
+            font-size: clamp(30px, 5vw, 50px);
+            letter-spacing: -1px;
+            margin-bottom: 50px;
         }
 
-        /* Bio-Glass Cards */
-        .bio-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            padding: 35px;
-            position: relative;
+        p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        /* Bento Box Grid (GenZ Aesthetic Layout) */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 250px);
+            gap: 20px;
+            margin-top: 60px;
+        }
+
+        .bento-item {
+            background: var(--surface-color);
+            border: 1px solid var(--surface-border);
+            border-radius: 24px;
             overflow: hidden;
-            transition: 0.3s;
-        }
-        .bio-card:hover {
-            border-color: var(--bio-color);
-            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.1);
-            transform: translateY(-5px);
+            position: relative;
+            backdrop-filter: blur(10px);
         }
 
-        /* Home Section */
-        .home-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; }
-        .hero-text h1 { 
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 65px; 
-            line-height: 1.1; 
-            margin-bottom: 20px; 
+        .bento-item img, .bento-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        
-        /* Typewriter Status */
-        .status-box {
-            display: inline-block;
-            background: rgba(0, 229, 255, 0.1);
-            border: 1px solid var(--bio-color);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-family: 'Space Grotesk', sans-serif;
-            color: var(--bio-color);
+
+        .bento-item:hover img, .bento-item:hover video {
+            transform: scale(1.05);
+        }
+
+        .bento-text {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        /* Specific Bento Placements */
+        .item-video { grid-column: span 2; grid-row: span 2; }
+        .item-text { grid-column: span 2; }
+        .item-photo1 { grid-column: span 1; }
+        .item-photo2 { grid-column: span 1; }
+
+        /* Premium Buttons */
+        .btn-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 32px;
+            background-color: var(--text-primary);
+            color: var(--bg-color);
+            font-family: 'Manrope', sans-serif;
+            font-weight: 500;
             font-size: 14px;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
-        }
-
-        .hero-text p { color: var(--text-muted); font-size: 18px; margin-bottom: 40px; line-height: 1.7; max-width: 90%; }
-
-        /* Media Grid (Lab Samples) */
-        .media-collage { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px; gap: 15px; }
-        .media-item { border-radius: 8px; overflow: hidden; border: 1px solid var(--glass-border); position: relative; }
-        .media-item img, .media-item video { width: 100%; height: 100%; object-fit: cover; filter: sepia(20%) hue-rotate(180deg) brightness(0.8); transition: 0.4s; }
-        .media-item:hover img, .media-item:hover video { filter: sepia(0%) hue-rotate(0deg) brightness(1.1); transform: scale(1.05); }
-        .tall-item { grid-row: span 2; }
-
-        /* Bio-Buttons */
-        .btn {
-            padding: 12px 30px;
-            background: transparent;
-            color: var(--bio-color);
             text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            display: inline-block;
-            transition: 0.3s;
-            border: 2px solid var(--bio-color);
+            border-radius: 100px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
             cursor: pointer;
-            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .btn-pill:hover {
+            transform: scale(0.97);
+            opacity: 0.9;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--surface-border);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--surface-color);
+        }
+
+        /* Cards for About & Works */
+        .aesthetic-card {
+            background: var(--surface-color);
+            border: 1px solid var(--surface-border);
+            border-radius: 24px;
+            padding: 40px;
+            transition: background 0.4s ease;
+        }
+
+        .aesthetic-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 6px 14px;
+            background: var(--surface-border);
+            border-radius: 100px;
+            font-size: 12px;
+            color: var(--text-primary);
+            margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
-        .btn:hover { background: var(--bio-color); color: var(--bg-dark); box-shadow: 0 0 20px rgba(0, 229, 255, 0.4); }
-        
-        .btn-fill {
-            background: var(--bio-color);
-            color: var(--bg-dark);
-        }
-        .btn-fill:hover { background: transparent; color: var(--bio-color); }
 
-        /* Grid Layouts */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        
-        .timeline-date { color: var(--bio-color); font-family: 'Space Grotesk', sans-serif; font-size: 14px; margin-bottom: 10px; display: block; }
-        .bio-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 22px; margin-bottom: 15px; }
-        .bio-card p { color: var(--text-muted); line-height: 1.7; font-size: 16px; margin-bottom: 20px;}
-
-        /* Mobile Adjustments */
+        /* Responsive Design */
         @media (max-width: 900px) {
-            .home-grid { grid-template-columns: 1fr; text-align: center; }
-            .hero-text p { margin: 0 auto 30px; }
-            nav ul { display: none; }
-            .theme-customizer { bottom: 10px; top: auto; right: 50%; transform: translateX(50%); flex-direction: row; }
-            section { padding-top: 100px; }
-            .section-title { justify-content: center; }
-            .section-title::before { display: none; }
+            header { width: 90%; padding: 15px; border-radius: 20px; }
+            nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+            .bento-grid { display: flex; flex-direction: column; }
+            .item-video, .item-text, .item-photo1, .item-photo2 { height: 300px; }
+            .item-text { height: auto; }
         }
     </style>
 </head>
 <body>
 
-    <div class="bio-background"></div>
-
-    <!-- Theme Customizer (Bio-Markers) -->
-    <div class="theme-customizer">
-        <div class="color-btn" style="background: #00E5FF; box-shadow: 0 0 10px #00E5FF;" onclick="setTheme('#00E5FF')"></div> <!-- Bio-Cyan -->
-        <div class="color-btn" style="background: #FF0055; box-shadow: 0 0 10px #FF0055;" onclick="setTheme('#FF0055')"></div> <!-- Plasma-Red -->
-        <div class="color-btn" style="background: #00FF66; box-shadow: 0 0 10px #00FF66;" onclick="setTheme('#00FF66')"></div> <!-- Eco-Green -->
-        <div class="color-btn" style="background: #B026FF; box-shadow: 0 0 10px #B026FF;" onclick="setTheme('#B026FF')"></div> <!-- Neural-Purple -->
-    </div>
+    <div class="ambient-glow"></div>
 
     <header>
-        <a href="#" class="logo" onclick="navigates('home')">Mehul.Bio</a>
         <nav>
             <ul>
-                <li><a onclick="navigates('home')" class="nav-btn active-link">Dashboard</a></li>
-                <li><a onclick="navigates('about')" class="nav-btn">Vitals</a></li>
-                <li><a onclick="navigates('experience')" class="nav-btn">Trials</a></li>
-                <li><a onclick="navigates('works')" class="nav-btn">Publications</a></li>
-                <li><a onclick="navigates('resume')" class="nav-btn">Records</a></li>
-                <li><a onclick="navigates('contact')" class="nav-btn">Consult</a></li>
+                <li><a onclick="navigates('home')" class="nav-btn active-link">Home</a></li>
+                <li><a onclick="navigates('about')" class="nav-btn">About</a></li>
+                <li><a onclick="navigates('works')" class="nav-btn">Works</a></li>
+                <li><a onclick="navigates('resume')" class="nav-btn">Resume</a></li>
+                <li><a onclick="navigates('contact')" class="nav-btn">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -306,181 +279,140 @@
     <main>
         <!-- HOME SECTION -->
         <section id="home" class="active-section">
-            <div class="home-grid">
-                <div class="hero-text">
-                    <div class="status-box">● <span id="typewriter"></span></div>
-                    <h1>Synthesizing<br>Content & Care.</h1>
-                    <p>Operating at the intersection of medical science and digital aesthetics. I engineer visual stories, specialized medical writing, and engaging social strategies that connect with audiences.</p>
-                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <a onclick="navigates('works')" class="btn btn-fill">View Publications</a>
-                        <a href="Mehul_Deshmukh_Resume.docx" download class="btn">Extract Resume</a>
-                    </div>
+            <h1 class="heading-huge">Mehul Deshmukh<br><span class="heading-italic">Creative & Clinical.</span></h1>
+            <p style="max-width: 500px; font-size: 18px;">Specializing in aesthetic visual storytelling, high-end photography, and specialized medical writing. Based in the intersection of art and science.</p>
+            
+            <div class="bento-grid">
+                <!-- Large Video Bento Box -->
+                <div class="bento-item item-video">
+                    <video src="reel.mp4" autoplay loop muted playsinline></video>
                 </div>
                 
-                <div class="media-collage">
-                    <div class="media-item tall-item">
-                        <video src="reel.mp4" autoplay loop muted playsinline></video>
+                <!-- Text Bento Box -->
+                <div class="bento-item item-text bento-text">
+                    <div>
+                        <div class="tag">Overview</div>
+                        <h3 style="font-size: 24px; margin-bottom: 15px; color: var(--text-primary);">A multidisciplinary approach to content.</h3>
+                        <p>Combining a deep understanding of healthcare (BPT) with premium digital marketing and aesthetic media creation.</p>
                     </div>
-                    <div class="media-item">
-                        <img src="photo1.jpg" alt="Visual Sample 1">
-                    </div>
-                    <div class="media-item">
-                        <img src="photo2.jpg" alt="Visual Sample 2">
-                    </div>
+                    <a onclick="navigates('works')" class="btn-pill btn-outline" style="width: fit-content; margin-top: 0;">Explore Works</a>
+                </div>
+
+                <!-- Photo 1 Bento Box -->
+                <div class="bento-item item-photo1">
+                    <img src="photo1.jpg" alt="Aesthetic Work">
+                </div>
+
+                <!-- Photo 2 Bento Box -->
+                <div class="bento-item item-photo2">
+                    <img src="photo2.jpg" alt="Aesthetic Vibe">
                 </div>
             </div>
         </section>
 
-        <!-- ABOUT (VITALS) SECTION -->
+        <!-- ABOUT SECTION -->
         <section id="about">
-            <h2 class="section-title">Patient Vitals</h2>
-            <div class="bio-card" style="max-width: 800px;">
-                <p>
-                    I am a versatile digital alchemist, currently building my foundation via a Bachelor of Physiotherapy (BPT) at Jain University. My background allows me to bridge the gap between complex anatomical/healthcare concepts and digestible digital communication.
-                </p>
-                <p>
-                    Beyond the clinical scope, my passion lies in high-end visual storytelling. Whether I am shooting cinematic footage for university festivals, engineering branding materials on Canva, or writing specialized medical articles, my objective is to create content that leaves a lasting impact on the algorithm and the human mind.
-                </p>
-            </div>
-        </section>
-
-        <!-- EXPERIENCE (TRIALS) SECTION -->
-        <section id="experience">
-            <h2 class="section-title">Clinical Trials & Experience</h2>
-            <div class="grid">
-                <div class="bio-card">
-                    <span class="timeline-date">Pramaan 3.0 | Parul Institute</span>
-                    <h3>Event Volunteer & Media Operative</h3>
-                    <p>Assisted in event planning, logistics management, and on-ground execution. Captured and produced cinematic video content and promotional materials for the forensic festival.</p>
+            <h2 class="section-title">The Vision.</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+                <div class="aesthetic-card">
+                    <div class="tag">01 / Foundation</div>
+                    <h3 style="font-size: 28px; margin-bottom: 15px;">Medical Science</h3>
+                    <p>Currently pursuing a Bachelor of Physiotherapy at Jain University. This robust academic background provides the authority and insight required for specialized medical writing and evidence-based health communication.</p>
                 </div>
-                <div class="bio-card">
-                    <span class="timeline-date">Independent Operative</span>
-                    <h3>Freelance Content Creator</h3>
-                    <p>Producing engaging visual content for cultural festivals and live performances. Skilled in aesthetic styling, visual pacing, and utilizing tools like CapCut, Canva, and AI software.</p>
+
+                <div class="aesthetic-card">
+                    <div class="tag">02 / Expression</div>
+                    <h3 style="font-size: 28px; margin-bottom: 15px;">Visual Aesthetics</h3>
+                    <p>A passionate freelance content creator specializing in cinematic photography, video editing (CapCut), and high-energy event coverage. Certified by Canva and skilled in AI-assisted production, I engineer media that commands attention.</p>
                 </div>
             </div>
         </section>
 
-        <!-- WORKS (PUBLICATIONS) SECTION -->
+        <!-- WORKS SECTION -->
         <section id="works">
-            <h2 class="section-title">Lab Results & Publications</h2>
-            <div class="grid">
-                <div class="bio-card">
-                    <h3>Healthcare & Medical Writing</h3>
-                    <p>Research and insights on the intersection of healthcare and communication paradigms.</p>
-                    <a href="Healthcare_Article.pdf" target="_blank" class="btn">View PDF</a>
+            <h2 class="section-title">Selected Works.</h2>
+            <div class="works-grid">
+                
+                <div class="aesthetic-card">
+                    <div class="tag">Medical Writing</div>
+                    <h3 style="font-size: 24px; margin-bottom: 15px;">Healthcare Communication</h3>
+                    <p>Insights exploring the intersection of modern healthcare knowledge and digital strategy.</p>
+                    <a href="Healthcare_Article.pdf" target="_blank" class="btn-pill btn-outline">Read Article</a>
                 </div>
-                <div class="bio-card">
-                    <h3>Plastics For Change</h3>
-                    <p>A content matrix exploring sustainability and environmental impact metrics.</p>
-                    <a href="Plastics_Article.pdf" target="_blank" class="btn">View PDF</a>
+
+                <div class="aesthetic-card">
+                    <div class="tag">Sustainability</div>
+                    <h3 style="font-size: 24px; margin-bottom: 15px;">Plastics For Change</h3>
+                    <p>A specialized content piece analyzing environmental impact and sustainability matrices.</p>
+                    <a href="Plastics_Article.pdf" target="_blank" class="btn-pill btn-outline">Read Document</a>
                 </div>
-                <div class="bio-card">
-                    <h3>Visual Media Drive</h3>
-                    <p>Secure access to my complete archive of high-quality event photography and cinematic video edits.</p>
-                    <a href="https://drive.google.com/drive/folders/13ro8TUWFXnzUNNAsq1b7PyzdWH94VuHg" target="_blank" class="btn">Open Drive</a>
+
+                <div class="aesthetic-card">
+                    <div class="tag">Visual Media</div>
+                    <h3 style="font-size: 24px; margin-bottom: 15px;">Cinematic Archive</h3>
+                    <p>Direct access to my complete Google Drive portfolio featuring event photography and brand aesthetics.</p>
+                    <a href="https://drive.google.com/drive/folders/13ro8TUWFXnzUNNAsq1b7PyzdWH94VuHg" target="_blank" class="btn-pill btn-outline">Open Drive</a>
                 </div>
+
             </div>
         </section>
 
-        <!-- RESUME (RECORDS) SECTION -->
+        <!-- RESUME SECTION -->
         <section id="resume">
-            <h2 class="section-title">Medical Records</h2>
-            <div class="bio-card" style="max-width: 600px; text-align: center; margin: 0 auto;">
-                <h3>Complete Professional Profile</h3>
-                <p style="margin-bottom: 30px;">Download my compiled records to view my full academic background, technical modules, and design certifications.</p>
-                <a href="Mehul_Deshmukh_Resume.docx" download class="btn btn-fill" style="animation: heartbeat 2.5s infinite;">Download Document</a>
+            <div class="aesthetic-card" style="text-align: center; max-width: 800px; margin: 0 auto; padding: 80px 40px;">
+                <h2 class="section-title" style="margin-bottom: 20px;">Professional Profile.</h2>
+                <p style="margin-bottom: 40px; font-size: 18px; max-width: 500px; margin-left: auto; margin-right: auto;">Access my complete academic background, technical proficiencies, and creative experience.</p>
+                <a href="Mehul_Deshmukh_Resume.docx" download class="btn-pill">Download Curriculum Vitae</a>
             </div>
         </section>
 
-        <!-- CONTACT (CONSULT) SECTION -->
+        <!-- CONTACT SECTION -->
         <section id="contact">
-            <h2 class="section-title">Request Consultation</h2>
-            <div class="bio-card" style="max-width: 600px;">
-                <p style="margin-bottom: 30px;">Open for collaborations in medical writing, content engineering, and social media management.</p>
-                <div style="display: flex; flex-direction: column; gap: 15px;">
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <span style="color: var(--bio-color);">[ Email ]</span> 
-                        <span>mehuldeshmukh106@gmail.com</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <span style="color: var(--bio-color);">[ Comms ]</span> 
-                        <span>+91 8109007299</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <span style="color: var(--bio-color);">[ Network ]</span> 
-                        <a href="https://www.linkedin.com/in/mehul-deshmukh-663390201" target="_blank" style="color: var(--text-main); text-decoration: none; border-bottom: 1px solid var(--bio-color);">LinkedIn Profile</a>
-                    </div>
+            <h2 class="section-title">Let's Connect.</h2>
+            <div class="aesthetic-card" style="max-width: 600px;">
+                <p style="font-size: 20px; margin-bottom: 40px; color: var(--text-primary);">Open for collaborations in content creation, medical writing, and aesthetic media production.</p>
+                
+                <div style="margin-bottom: 20px;">
+                    <p style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Email</p>
+                    <a href="mailto:mehuldeshmukh106@gmail.com" style="color: var(--text-primary); text-decoration: none; font-size: 24px; font-weight: 500;">mehuldeshmukh106@gmail.com</a>
                 </div>
+                
+                <div style="margin-bottom: 40px;">
+                    <p style="font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Phone</p>
+                    <p style="color: var(--text-primary); font-size: 24px; font-weight: 500;">+91 8109007299</p>
+                </div>
+
+                <a href="https://www.linkedin.com/in/mehul-deshmukh-663390201" target="_blank" class="btn-pill btn-outline">Visit LinkedIn</a>
             </div>
         </section>
     </main>
 
     <script>
-        // Tab Navigation Logic
         function navigates(sectionId) {
+            // Hide all sections, remove animations
             const sections = document.querySelectorAll('section');
-            sections.forEach(sec => sec.classList.remove('active-section'));
+            sections.forEach(sec => {
+                sec.classList.remove('active-section');
+                sec.style.animation = 'none'; // reset animation
+            });
             
-            document.getElementById(sectionId).classList.add('active-section');
+            // Force reflow to restart animation
+            void document.body.offsetWidth;
             
+            // Show target section and apply fade-up
+            const target = document.getElementById(sectionId);
+            target.classList.add('active-section');
+            target.style.animation = 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards';
+            
+            // Update Navigation Pill
             const navLinks = document.querySelectorAll('.nav-btn');
             navLinks.forEach(link => link.classList.remove('active-link'));
             event.target.classList.add('active-link');
             
-            window.scrollTo(0,0);
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
-
-        // Theme Customizer Logic
-        function setTheme(color) {
-            document.documentElement.style.setProperty('--bio-color', color);
-            // Update glass backgrounds slightly based on theme color
-            const hexToRgb = (hex) => {
-                const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-                return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : null;
-            };
-            const rgb = hexToRgb(color);
-            if (rgb) {
-                document.documentElement.style.setProperty('--glass-bg', `rgba(${rgb}, 0.03)`);
-                document.documentElement.style.setProperty('--glass-border', `rgba(${rgb}, 0.15)`);
-            }
-        }
-
-        // Medical Typewriter Effect
-        const roles = ["Extracting Medical Insights...", "Engineering Digital Content...", "Monitoring Audience Metrics...", "Synthesizing Visual Data..."];
-        let roleIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typeSpeed = 80;
-
-        function typeEffect() {
-            const currentRole = roles[roleIndex];
-            const textElement = document.getElementById("typewriter");
-
-            if (isDeleting) {
-                textElement.innerText = currentRole.substring(0, charIndex - 1);
-                charIndex--;
-                typeSpeed = 40;
-            } else {
-                textElement.innerText = currentRole.substring(0, charIndex + 1);
-                charIndex++;
-                typeSpeed = 100;
-            }
-
-            if (!isDeleting && charIndex === currentRole.length) {
-                isDeleting = true;
-                typeSpeed = 2500; // Pause at end of phrase
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                roleIndex = (roleIndex + 1) % roles.length;
-                typeSpeed = 500; // Pause before new phrase
-            }
-
-            setTimeout(typeEffect, typeSpeed);
-        }
-
-        // Start typing effect
-        document.addEventListener("DOMContentLoaded", typeEffect);
     </script>
 </body>
 </html>
