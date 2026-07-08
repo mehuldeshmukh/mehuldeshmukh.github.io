@@ -3,130 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEHUL // SYS.ADMIN</title>
-    <!-- Hacker / Terminal Fonts -->
+    <title>Mehul Deshmukh | Bio-Digital Portfolio</title>
+    <!-- Modern, Tech-Focused Fonts -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Outfit:wght@300;400;600&display=swap');
 
         :root {
-            --term-color: #00ff41; /* Matrix Green */
-            --bg-color: #050505;
-            --term-muted: #008f11;
-            --border-color: #00ff41;
+            --bio-color: #00E5FF; /* Cyan/Teal Medical Glow */
+            --bg-dark: #050914; /* Deep Lab Dark */
+            --glass-bg: rgba(0, 229, 255, 0.03);
+            --glass-border: rgba(0, 229, 255, 0.15);
+            --text-main: #E2E8F0;
+            --text-muted: #94A3B8;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Share Tech Mono', monospace;
+            font-family: 'Outfit', sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--term-color);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             overflow-x: hidden;
-            /* CRT Screen Effect */
-            background-image: 
-                linear-gradient(rgba(0, 255, 0, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
-            background-size: 20px 20px;
+            min-height: 100vh;
         }
 
-        /* Scanline Overlay */
-        body::after {
-            content: " ";
-            display: block;
+        /* Abstract Cellular / Pulse Background */
+        .bio-background {
             position: fixed;
             top: 0;
             left: 0;
-            bottom: 0;
-            right: 0;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            z-index: 2;
-            background-size: 100% 2px, 3px 100%;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 15% 50%, rgba(0, 229, 255, 0.05), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(0, 229, 255, 0.04), transparent 25%);
+            background-size: cover;
+            animation: pulse-bg 8s infinite alternate;
+        }
+
+        /* Grid Overlay (Microscope aesthetic) */
+        .bio-background::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
             pointer-events: none;
         }
 
-        /* Glitch Effect */
-        .glitch {
-            font-size: 60px;
-            font-weight: bold;
-            text-transform: uppercase;
-            position: relative;
-            text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.025em -0.05em 0 rgba(0,255,0,0.75), 0.025em 0.05em 0 rgba(0,0,255,0.75);
-            animation: glitch 500ms infinite;
+        @keyframes pulse-bg {
+            0% { opacity: 0.5; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.05); }
         }
 
-        .glitch span {
-            position: absolute;
-            top: 0;
-            left: 0;
+        /* Heartbeat Animation for specific elements */
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.05); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
-        .glitch span:first-child {
-            animation: glitch 650ms infinite;
-            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-            transform: translate(-0.025em, -0.0125em);
-            opacity: 0.8;
-        }
-
-        .glitch span:last-child {
-            animation: glitch 375ms infinite;
-            clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
-            transform: translate(0.0125em, 0.025em);
-            opacity: 0.8;
-        }
-
-        @keyframes glitch {
-            0% { text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.05em -0.025em 0 rgba(0,255,0,0.75), -0.025em 0.05em 0 rgba(0,0,255,0.75); }
-            14% { text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.05em -0.025em 0 rgba(0,255,0,0.75), -0.025em 0.05em 0 rgba(0,0,255,0.75); }
-            15% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75); }
-            49% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75); }
-            50% { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75); }
-            99% { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75); }
-            100% { text-shadow: -0.025em 0 0 rgba(255,0,0,0.75), -0.025em -0.025em 0 rgba(0,255,0,0.75), -0.025em -0.05em 0 rgba(0,0,255,0.75); }
-        }
-
-        /* Navigation */
+        /* Navigation (Medical Dashboard Style) */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.9);
-            border-bottom: 2px solid var(--border-color);
-            z-index: 100;
+            padding: 20px 5%;
+            background: rgba(5, 9, 20, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid var(--glass-border);
         }
 
         .logo {
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 24px;
-            font-weight: bold;
-            color: var(--term-color);
+            font-weight: 700;
+            color: var(--text-main);
             text-decoration: none;
-            text-shadow: 0 0 5px var(--term-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Little heartbeat icon next to logo */
+        .logo::before {
+            content: '♥';
+            color: var(--bio-color);
+            font-size: 20px;
+            animation: heartbeat 2s infinite;
         }
 
-        nav ul { display: flex; list-style: none; gap: 20px; flex-wrap: wrap; }
+        nav ul { display: flex; list-style: none; gap: 30px; flex-wrap: wrap; }
         nav ul li a {
-            color: var(--term-muted);
+            color: var(--text-muted);
             text-decoration: none;
-            font-size: 16px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
             cursor: pointer;
-            transition: 0.2s;
+            transition: 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
         }
         nav ul li a:hover, nav ul li a.active-link {
-            color: var(--term-color);
-            text-shadow: 0 0 10px var(--term-color);
+            color: var(--bio-color);
+            background: var(--glass-bg);
+            box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
         }
-        nav ul li a::before { content: "[ "; color: var(--term-muted); }
-        nav ul li a::after { content: " ]"; color: var(--term-muted); }
-        nav ul li a:hover::before, nav ul li a:hover::after, nav ul li a.active-link::before, nav ul li a.active-link::after { color: var(--term-color); }
 
-        /* Theme Customizer */
+        /* Theme Customizer (DNA Strands) */
         .theme-customizer {
             position: fixed;
             right: 20px;
@@ -134,149 +134,171 @@
             transform: translateY(-50%);
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
             z-index: 999;
-            border: 1px solid var(--border-color);
-            padding: 10px;
-            background: #000;
+            background: rgba(0,0,0,0.4);
+            padding: 15px 10px;
+            border-radius: 30px;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(5px);
         }
         .color-btn {
-            width: 25px;
-            height: 25px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
             cursor: pointer;
-            border: 1px solid #fff;
+            border: 2px solid transparent;
+            transition: 0.3s;
+            box-shadow: 0 0 10px rgba(255,255,255,0.1);
         }
+        .color-btn:hover { transform: scale(1.3); border-color: #fff; }
 
-        /* Sections */
+        /* Section Layout */
         section {
             display: none;
-            padding: 120px 5% 50px;
+            padding: 140px 8% 80px;
             min-height: 100vh;
+            animation: fadeIn 0.5s ease-out;
         }
-        section.active-section { display: block; animation: crtFlicker 0.1s ease-in; }
+        section.active-section { display: block; }
 
-        @keyframes crtFlicker {
-            0% { opacity: 0; }
-            50% { opacity: 1; }
-            100% { opacity: 1; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         .section-title {
-            font-size: 30px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 35px;
             margin-bottom: 40px;
-            border-bottom: 2px dashed var(--term-color);
-            display: inline-block;
-            padding-bottom: 5px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-        .section-title::before { content: "> "; }
-
-        /* Cyber Cards */
-        .cyber-card {
-            border: 1px solid var(--term-color);
-            background: rgba(0, 0, 0, 0.7);
-            padding: 25px;
-            position: relative;
-            box-shadow: inset 0 0 15px rgba(0, 255, 65, 0.1);
-        }
-        .cyber-card::before {
+        .section-title::before {
             content: '';
-            position: absolute;
-            top: -2px; left: -2px;
-            width: 15px; height: 15px;
-            border-top: 3px solid var(--term-color);
-            border-left: 3px solid var(--term-color);
-        }
-        .cyber-card::after {
-            content: '';
-            position: absolute;
-            bottom: -2px; right: -2px;
-            width: 15px; height: 15px;
-            border-bottom: 3px solid var(--term-color);
-            border-right: 3px solid var(--term-color);
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: var(--bio-color);
         }
 
-        /* Terminal Text */
-        .terminal-text {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        .highlight { background: var(--term-color); color: #000; padding: 0 5px; }
-
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            border: 1px solid var(--term-color);
-            color: var(--term-color);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: bold;
-            background: transparent;
-            cursor: pointer;
-            transition: 0.2s;
-            margin-top: 15px;
-        }
-        .btn:hover { background: var(--term-color); color: #000; }
-
-        /* Media Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        
-        .media-box {
-            border: 1px solid var(--term-color);
+        /* Bio-Glass Cards */
+        .bio-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 35px;
             position: relative;
-        }
-        .media-box img, .media-box video {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            filter: grayscale(100%) contrast(120%);
+            overflow: hidden;
             transition: 0.3s;
         }
-        .media-box:hover img, .media-box:hover video { filter: grayscale(0%) contrast(100%); }
-        .media-tag {
-            position: absolute;
-            top: 5px;
-            left: 5px;
-            background: var(--term-color);
-            color: #000;
-            font-size: 12px;
-            padding: 2px 5px;
-            font-weight: bold;
+        .bio-card:hover {
+            border-color: var(--bio-color);
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.1);
+            transform: translateY(-5px);
         }
 
-        /* Typewriter Cursor */
-        .cursor { display: inline-block; width: 10px; height: 20px; background: var(--term-color); animation: blink 1s step-end infinite; vertical-align: bottom; }
-        @keyframes blink { 50% { opacity: 0; } }
+        /* Home Section */
+        .home-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; }
+        .hero-text h1 { 
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 65px; 
+            line-height: 1.1; 
+            margin-bottom: 20px; 
+        }
+        
+        /* Typewriter Status */
+        .status-box {
+            display: inline-block;
+            background: rgba(0, 229, 255, 0.1);
+            border: 1px solid var(--bio-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--bio-color);
+            font-size: 14px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
 
-        /* Mobile Fixes */
-        @media (max-width: 768px) {
-            nav ul { justify-content: center; }
+        .hero-text p { color: var(--text-muted); font-size: 18px; margin-bottom: 40px; line-height: 1.7; max-width: 90%; }
+
+        /* Media Grid (Lab Samples) */
+        .media-collage { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px; gap: 15px; }
+        .media-item { border-radius: 8px; overflow: hidden; border: 1px solid var(--glass-border); position: relative; }
+        .media-item img, .media-item video { width: 100%; height: 100%; object-fit: cover; filter: sepia(20%) hue-rotate(180deg) brightness(0.8); transition: 0.4s; }
+        .media-item:hover img, .media-item:hover video { filter: sepia(0%) hue-rotate(0deg) brightness(1.1); transform: scale(1.05); }
+        .tall-item { grid-row: span 2; }
+
+        /* Bio-Buttons */
+        .btn {
+            padding: 12px 30px;
+            background: transparent;
+            color: var(--bio-color);
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            display: inline-block;
+            transition: 0.3s;
+            border: 2px solid var(--bio-color);
+            cursor: pointer;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn:hover { background: var(--bio-color); color: var(--bg-dark); box-shadow: 0 0 20px rgba(0, 229, 255, 0.4); }
+        
+        .btn-fill {
+            background: var(--bio-color);
+            color: var(--bg-dark);
+        }
+        .btn-fill:hover { background: transparent; color: var(--bio-color); }
+
+        /* Grid Layouts */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .timeline-date { color: var(--bio-color); font-family: 'Space Grotesk', sans-serif; font-size: 14px; margin-bottom: 10px; display: block; }
+        .bio-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 22px; margin-bottom: 15px; }
+        .bio-card p { color: var(--text-muted); line-height: 1.7; font-size: 16px; margin-bottom: 20px;}
+
+        /* Mobile Adjustments */
+        @media (max-width: 900px) {
+            .home-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-text p { margin: 0 auto 30px; }
+            nav ul { display: none; }
             .theme-customizer { bottom: 10px; top: auto; right: 50%; transform: translateX(50%); flex-direction: row; }
-            .glitch { font-size: 40px; }
+            section { padding-top: 100px; }
+            .section-title { justify-content: center; }
+            .section-title::before { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Cyberpunk Theme Customizer -->
+    <div class="bio-background"></div>
+
+    <!-- Theme Customizer (Bio-Markers) -->
     <div class="theme-customizer">
-        <div class="color-btn" style="background: #00ff41;" onclick="setTheme('#00ff41', '#008f11')"></div> <!-- Matrix Green -->
-        <div class="color-btn" style="background: #ff003c;" onclick="setTheme('#ff003c', '#8a0020')"></div> <!-- Blood Red -->
-        <div class="color-btn" style="background: #00ffff;" onclick="setTheme('#00ffff', '#008b8b')"></div> <!-- Cyber Cyan -->
-        <div class="color-btn" style="background: #ffb000;" onclick="setTheme('#ffb000', '#cc8c00')"></div> <!-- Hacker Amber -->
+        <div class="color-btn" style="background: #00E5FF; box-shadow: 0 0 10px #00E5FF;" onclick="setTheme('#00E5FF')"></div> <!-- Bio-Cyan -->
+        <div class="color-btn" style="background: #FF0055; box-shadow: 0 0 10px #FF0055;" onclick="setTheme('#FF0055')"></div> <!-- Plasma-Red -->
+        <div class="color-btn" style="background: #00FF66; box-shadow: 0 0 10px #00FF66;" onclick="setTheme('#00FF66')"></div> <!-- Eco-Green -->
+        <div class="color-btn" style="background: #B026FF; box-shadow: 0 0 10px #B026FF;" onclick="setTheme('#B026FF')"></div> <!-- Neural-Purple -->
     </div>
 
     <header>
-        <a href="#" class="logo" onclick="navigates('home')">root@mehul:~#</a>
+        <a href="#" class="logo" onclick="navigates('home')">Mehul.Bio</a>
         <nav>
             <ul>
-                <li><a onclick="navigates('home')" class="nav-btn active-link">home</a></li>
-                <li><a onclick="navigates('about')" class="nav-btn">sys_info</a></li>
-                <li><a onclick="navigates('skills')" class="nav-btn">modules</a></li>
-                <li><a onclick="navigates('projects')" class="nav-btn">projects</a></li>
-                <li><a onclick="navigates('writeups')" class="nav-btn">writeups</a></li>
-                <li><a onclick="navigates('contact')" class="nav-btn">ping_me</a></li>
+                <li><a onclick="navigates('home')" class="nav-btn active-link">Dashboard</a></li>
+                <li><a onclick="navigates('about')" class="nav-btn">Vitals</a></li>
+                <li><a onclick="navigates('experience')" class="nav-btn">Trials</a></li>
+                <li><a onclick="navigates('works')" class="nav-btn">Publications</a></li>
+                <li><a onclick="navigates('resume')" class="nav-btn">Records</a></li>
+                <li><a onclick="navigates('contact')" class="nav-btn">Consult</a></li>
             </ul>
         </nav>
     </header>
@@ -284,123 +306,118 @@
     <main>
         <!-- HOME SECTION -->
         <section id="home" class="active-section">
-            <div class="terminal-text">
-                <p>>_ INITIALIZING SYSTEM ARCHITECTURE...</p>
-                <p>>_ DECRYPTING USER PROFILE...</p>
-                <br>
-                <div class="glitch" data-text="MEHUL DESHMUKH">MEHUL DESHMUKH
-                    <span>MEHUL DESHMUKH</span>
-                    <span>MEHUL DESHMUKH</span>
-                </div>
-                <br>
-                <p>>_ ROLE: <span id="typewriter"></span><span class="cursor"></span></p>
-            </div>
-            
-            <div style="margin-top: 50px;">
-                <a onclick="navigates('projects')" class="btn">EXECUTE ./VIEW_WORK.sh</a>
-                <a href="Mehul_Deshmukh_Resume.docx" download class="btn">DOWNLOAD ./RESUME.sys</a>
-            </div>
-        </section>
-
-        <!-- ABOUT SECTION -->
-        <section id="about">
-            <h2 class="section-title">sys_info</h2>
-            <div class="cyber-card">
-                <p class="terminal-text">
-                    <span class="highlight">STATUS:</span> Active
-                    <br><br>
-                    >_ Decoding Background...
-                    <br>
-                    Currently extracting knowledge via Bachelor of Physiotherapy (BPT) at Jain University. Bridging the gap between organic human mechanics and digital algorithms.
-                    <br><br>
-                    >_ Operating Parameters:
-                    <br>
-                    I operate at the intersection of medical science and digital aesthetic. I don't just write content; I engineer visual and textual assets that infect the algorithm and engage the target demographic.
-                </p>
-            </div>
-        </section>
-
-        <!-- SKILLS SECTION -->
-        <section id="skills">
-            <h2 class="section-title">modules_loaded</h2>
-            <div class="grid">
-                <div class="cyber-card">
-                    <h3>>_ MEDIA.sys</h3>
-                    <p class="terminal-text" style="margin-top: 10px;">Cinematic Videography, Aesthetic Layering, Video Editing (CapCut/VN), Photography.</p>
-                </div>
-                <div class="cyber-card">
-                    <h3>>_ CONTENT.exe</h3>
-                    <p class="terminal-text" style="margin-top: 10px;">Medical Writing, Copywriting, AI-Assisted Scripting, Audience Hacking.</p>
-                </div>
-                <div class="cyber-card">
-                    <h3>>_ TOOLS.bat</h3>
-                    <p class="terminal-text" style="margin-top: 10px;">Canva (Certified Protocol), ChatGPT, Google Workspace.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROJECTS / WORKS SECTION -->
-        <section id="projects">
-            <h2 class="section-title">projects / sidequests</h2>
-            <div class="grid">
-                <!-- MEDIA ITEM 1 -->
-                <div class="media-box">
-                    <div class="media-tag">REC_001.mp4</div>
-                    <video src="reel.mp4" autoplay loop muted playsinline></video>
+            <div class="home-grid">
+                <div class="hero-text">
+                    <div class="status-box">● <span id="typewriter"></span></div>
+                    <h1>Synthesizing<br>Content & Care.</h1>
+                    <p>Operating at the intersection of medical science and digital aesthetics. I engineer visual stories, specialized medical writing, and engaging social strategies that connect with audiences.</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a onclick="navigates('works')" class="btn btn-fill">View Publications</a>
+                        <a href="Mehul_Deshmukh_Resume.docx" download class="btn">Extract Resume</a>
+                    </div>
                 </div>
                 
-                <!-- MEDIA ITEM 2 -->
-                <div class="media-box">
-                    <div class="media-tag">IMG_DATA_01</div>
-                    <img src="photo1.jpg" alt="Project File 1">
-                </div>
-
-                <!-- MEDIA ITEM 3 -->
-                <div class="media-box">
-                    <div class="media-tag">IMG_DATA_02</div>
-                    <img src="photo2.jpg" alt="Project File 2">
-                </div>
-            </div>
-            <div style="margin-top: 30px; text-align: center;">
-                <a href="https://drive.google.com/drive/folders/13ro8TUWFXnzUNNAsq1b7PyzdWH94VuHg" target="_blank" class="btn">>_ ACCESS SECURE ARCHIVE (G-DRIVE)</a>
-            </div>
-        </section>
-
-        <!-- WRITEUPS SECTION -->
-        <section id="writeups">
-            <h2 class="section-title">classified_writeups</h2>
-            <div class="grid">
-                <div class="cyber-card">
-                    <h3>[ DOC: HEALTHCARE PROTOCOL ]</h3>
-                    <p class="terminal-text" style="font-size: 14px; margin-top: 10px;">Analysis on the intersection of healthcare and digital communication paradigms.</p>
-                    <a href="Healthcare_Article.pdf" target="_blank" class="btn">> DECRYPT_FILE</a>
-                </div>
-                <div class="cyber-card">
-                    <h3>[ DOC: PLASTICS_4_CHANGE ]</h3>
-                    <p class="terminal-text" style="font-size: 14px; margin-top: 10px;">Environmental impact metrics and sustainability content matrix.</p>
-                    <a href="Plastics_Article.pdf" target="_blank" class="btn">> DECRYPT_FILE</a>
+                <div class="media-collage">
+                    <div class="media-item tall-item">
+                        <video src="reel.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <div class="media-item">
+                        <img src="photo1.jpg" alt="Visual Sample 1">
+                    </div>
+                    <div class="media-item">
+                        <img src="photo2.jpg" alt="Visual Sample 2">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- CONTACT SECTION -->
-        <section id="contact">
-            <h2 class="section-title">ping_me</h2>
-            <div class="cyber-card" style="max-width: 600px;">
-                <p class="terminal-text">>_ INITIATING HANDSHAKE PROTOCOL...</p>
-                <p class="terminal-text">>_ SYSTEM READY TO RECEIVE TRANSMISSION.</p>
-                <br>
-                <p class="terminal-text">
-                    [ EMAIL ] :: <span class="highlight">mehuldeshmukh106@gmail.com</span><br><br>
-                    [ PHONE ] :: <span class="highlight">+91 8109007299</span><br><br>
-                    [ NETWORK ] :: <a href="https://www.linkedin.com/in/mehul-deshmukh-663390201" target="_blank" style="color: var(--term-color);">>_ ESTABLISH LINKEDIN CONNECTION</a>
+        <!-- ABOUT (VITALS) SECTION -->
+        <section id="about">
+            <h2 class="section-title">Patient Vitals</h2>
+            <div class="bio-card" style="max-width: 800px;">
+                <p>
+                    I am a versatile digital alchemist, currently building my foundation via a Bachelor of Physiotherapy (BPT) at Jain University. My background allows me to bridge the gap between complex anatomical/healthcare concepts and digestible digital communication.
                 </p>
+                <p>
+                    Beyond the clinical scope, my passion lies in high-end visual storytelling. Whether I am shooting cinematic footage for university festivals, engineering branding materials on Canva, or writing specialized medical articles, my objective is to create content that leaves a lasting impact on the algorithm and the human mind.
+                </p>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE (TRIALS) SECTION -->
+        <section id="experience">
+            <h2 class="section-title">Clinical Trials & Experience</h2>
+            <div class="grid">
+                <div class="bio-card">
+                    <span class="timeline-date">Pramaan 3.0 | Parul Institute</span>
+                    <h3>Event Volunteer & Media Operative</h3>
+                    <p>Assisted in event planning, logistics management, and on-ground execution. Captured and produced cinematic video content and promotional materials for the forensic festival.</p>
+                </div>
+                <div class="bio-card">
+                    <span class="timeline-date">Independent Operative</span>
+                    <h3>Freelance Content Creator</h3>
+                    <p>Producing engaging visual content for cultural festivals and live performances. Skilled in aesthetic styling, visual pacing, and utilizing tools like CapCut, Canva, and AI software.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORKS (PUBLICATIONS) SECTION -->
+        <section id="works">
+            <h2 class="section-title">Lab Results & Publications</h2>
+            <div class="grid">
+                <div class="bio-card">
+                    <h3>Healthcare & Medical Writing</h3>
+                    <p>Research and insights on the intersection of healthcare and communication paradigms.</p>
+                    <a href="Healthcare_Article.pdf" target="_blank" class="btn">View PDF</a>
+                </div>
+                <div class="bio-card">
+                    <h3>Plastics For Change</h3>
+                    <p>A content matrix exploring sustainability and environmental impact metrics.</p>
+                    <a href="Plastics_Article.pdf" target="_blank" class="btn">View PDF</a>
+                </div>
+                <div class="bio-card">
+                    <h3>Visual Media Drive</h3>
+                    <p>Secure access to my complete archive of high-quality event photography and cinematic video edits.</p>
+                    <a href="https://drive.google.com/drive/folders/13ro8TUWFXnzUNNAsq1b7PyzdWH94VuHg" target="_blank" class="btn">Open Drive</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- RESUME (RECORDS) SECTION -->
+        <section id="resume">
+            <h2 class="section-title">Medical Records</h2>
+            <div class="bio-card" style="max-width: 600px; text-align: center; margin: 0 auto;">
+                <h3>Complete Professional Profile</h3>
+                <p style="margin-bottom: 30px;">Download my compiled records to view my full academic background, technical modules, and design certifications.</p>
+                <a href="Mehul_Deshmukh_Resume.docx" download class="btn btn-fill" style="animation: heartbeat 2.5s infinite;">Download Document</a>
+            </div>
+        </section>
+
+        <!-- CONTACT (CONSULT) SECTION -->
+        <section id="contact">
+            <h2 class="section-title">Request Consultation</h2>
+            <div class="bio-card" style="max-width: 600px;">
+                <p style="margin-bottom: 30px;">Open for collaborations in medical writing, content engineering, and social media management.</p>
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="color: var(--bio-color);">[ Email ]</span> 
+                        <span>mehuldeshmukh106@gmail.com</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="color: var(--bio-color);">[ Comms ]</span> 
+                        <span>+91 8109007299</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <span style="color: var(--bio-color);">[ Network ]</span> 
+                        <a href="https://www.linkedin.com/in/mehul-deshmukh-663390201" target="_blank" style="color: var(--text-main); text-decoration: none; border-bottom: 1px solid var(--bio-color);">LinkedIn Profile</a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <script>
-        // SPY/HACKER NAVIGATION LOGIC
+        // Tab Navigation Logic
         function navigates(sectionId) {
             const sections = document.querySelectorAll('section');
             sections.forEach(sec => sec.classList.remove('active-section'));
@@ -414,19 +431,27 @@
             window.scrollTo(0,0);
         }
 
-        // CYBER THEME CHANGER
-        function setTheme(primary, secondary) {
-            document.documentElement.style.setProperty('--term-color', primary);
-            document.documentElement.style.setProperty('--border-color', primary);
-            document.documentElement.style.setProperty('--term-muted', secondary);
+        // Theme Customizer Logic
+        function setTheme(color) {
+            document.documentElement.style.setProperty('--bio-color', color);
+            // Update glass backgrounds slightly based on theme color
+            const hexToRgb = (hex) => {
+                const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+                return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : null;
+            };
+            const rgb = hexToRgb(color);
+            if (rgb) {
+                document.documentElement.style.setProperty('--glass-bg', `rgba(${rgb}, 0.03)`);
+                document.documentElement.style.setProperty('--glass-border', `rgba(${rgb}, 0.15)`);
+            }
         }
 
-        // HACKER TYPEWRITER EFFECT
-        const roles = ["MEDICAL_WRITER.sys", "DIGITAL_ALCHEMIST.exe", "SOCIAL_HACKER.bat", "CONTENT_CREATOR.sh"];
+        // Medical Typewriter Effect
+        const roles = ["Extracting Medical Insights...", "Engineering Digital Content...", "Monitoring Audience Metrics...", "Synthesizing Visual Data..."];
         let roleIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        let typeSpeed = 100;
+        let typeSpeed = 80;
 
         function typeEffect() {
             const currentRole = roles[roleIndex];
@@ -435,26 +460,26 @@
             if (isDeleting) {
                 textElement.innerText = currentRole.substring(0, charIndex - 1);
                 charIndex--;
-                typeSpeed = 50;
+                typeSpeed = 40;
             } else {
                 textElement.innerText = currentRole.substring(0, charIndex + 1);
                 charIndex++;
-                typeSpeed = 150;
+                typeSpeed = 100;
             }
 
             if (!isDeleting && charIndex === currentRole.length) {
                 isDeleting = true;
-                typeSpeed = 2000; // Pause at end of word
+                typeSpeed = 2500; // Pause at end of phrase
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 roleIndex = (roleIndex + 1) % roles.length;
-                typeSpeed = 500; // Pause before new word
+                typeSpeed = 500; // Pause before new phrase
             }
 
             setTimeout(typeEffect, typeSpeed);
         }
 
-        // Start typing effect on load
+        // Start typing effect
         document.addEventListener("DOMContentLoaded", typeEffect);
     </script>
 </body>
