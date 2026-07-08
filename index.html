@@ -3,38 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mehul Deshmukh | Creative Portfolio</title>
+    <title>Mehul Deshmukh | Professional Portfolio</title>
+    <!-- Professional Font -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
 
-        /* Default Theme Variables */
         :root {
-            --bg-color: #0f0c29; /* Fallback */
-            --accent: #8a2be2;   /* Default Purple */
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --accent: #8a2be2; /* Default Purple */
+            --glass-bg: rgba(20, 20, 25, 0.4);
+            --glass-border: rgba(255, 255, 255, 0.08);
             --text-main: #ffffff;
-            --text-muted: #b0b0c0;
+            --text-muted: #9ca3af;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
-        /* Animated Gradient Background */
+        /* 
+         * THE PREMIUM WAVE / FLUID GRADIENT BACKGROUND 
+         * Exactly like high-end dev portfolios
+         */
         body {
-            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1a1a2e);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            background-color: #050505;
             color: var(--text-main);
-            min-height: 100vh;
             overflow-x: hidden;
+            min-height: 100vh;
         }
 
-        @keyframes gradientBG {
+        .wave-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: linear-gradient(
+                45deg, 
+                #050505, 
+                #0f0c29, 
+                #1a1a2e, 
+                var(--accent), 
+                #050505
+            );
+            background-size: 400% 400%;
+            animation: gradientWave 15s ease infinite;
+            opacity: 0.25; /* Keeps it subtle and professional */
+            filter: blur(40px);
+        }
+
+        @keyframes gradientWave {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
@@ -45,10 +66,10 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 5%;
-            background: rgba(15, 12, 41, 0.7);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            padding: 20px 8%;
+            background: rgba(5, 5, 5, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -61,33 +82,36 @@
             font-weight: 800;
             color: var(--text-main);
             text-decoration: none;
-            letter-spacing: 1px;
+            letter-spacing: -0.5px;
         }
-
         .logo span { color: var(--accent); transition: color 0.3s ease; }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
+        nav ul { display: flex; list-style: none; gap: 35px; }
         nav ul li a {
-            color: var(--text-main);
+            color: var(--text-muted);
             text-decoration: none;
-            font-size: 15px;
-            font-weight: 400;
+            font-size: 14px;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
             cursor: pointer;
             transition: 0.3s;
-            padding-bottom: 5px;
+            position: relative;
         }
-
-        nav ul li a:hover, nav ul li a.active-link {
-            color: var(--accent);
-            border-bottom: 2px solid var(--accent);
+        
+        /* Underline Animation for Links */
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
         }
+        nav ul li a:hover::after, nav ul li a.active-link::after { width: 100%; }
+        nav ul li a:hover, nav ul li a.active-link { color: var(--text-main); }
 
         /* Theme Customizer */
         .theme-customizer {
@@ -95,7 +119,7 @@
             right: 20px;
             top: 50%;
             transform: translateY(-50%);
-            background: var(--glass-bg);
+            background: rgba(0,0,0,0.5);
             backdrop-filter: blur(10px);
             padding: 15px 10px;
             border-radius: 30px;
@@ -107,82 +131,67 @@
         }
 
         .color-btn {
-            width: 25px;
-            height: 25px;
+            width: 22px;
+            height: 22px;
             border-radius: 50%;
             cursor: pointer;
             border: 2px solid transparent;
             transition: 0.3s;
         }
-        .color-btn:hover { transform: scale(1.2); border-color: #fff; }
+        .color-btn:hover { transform: scale(1.3); border-color: #fff; }
 
-        /* Section Layout (Hidden by default, shown via JS) */
+        /* Sections (Single Page App Logic) */
         section {
             display: none;
-            padding: 130px 10% 80px;
+            padding: 160px 8% 80px;
             min-height: 100vh;
-            animation: fadeIn 0.6s ease-in-out;
+            animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
+        section.active-section { display: block; }
 
-        section.active-section {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .section-title {
-            font-size: 38px;
-            margin-bottom: 40px;
-            font-weight: 800;
-        }
+        .section-title { font-size: 45px; margin-bottom: 50px; font-weight: 800; letter-spacing: -1px; }
         .section-title span { color: var(--accent); }
 
-        /* Glassmorphism Cards */
+        /* Premium Glassmorphism Cards */
         .glass-card {
             background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
 
         /* Home Section */
-        .home-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
+        .home-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; }
+        .hero-text h1 { font-size: 70px; line-height: 1.1; margin-bottom: 20px; letter-spacing: -2px; }
+        
+        /* Typing Effect Styling */
+        .typing-container {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 25px;
+            height: 35px;
         }
+        .hero-text p { color: var(--text-muted); font-size: 18px; margin-bottom: 40px; max-width: 90%; line-height: 1.7; }
 
-        .hero-text h1 { font-size: 60px; line-height: 1.1; margin-bottom: 15px; }
-        .hero-text h2 { color: var(--accent); font-weight: 600; margin-bottom: 25px; font-size: 24px; transition: color 0.3s ease; }
-        .hero-text p { color: var(--text-muted); font-size: 18px; margin-bottom: 35px; max-width: 90%; }
-
-        /* Featured Media Grid on Home */
-        .media-collage {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 200px 200px;
-            gap: 15px;
-        }
-        .media-item {
-            border-radius: 15px;
-            overflow: hidden;
-            border: 2px solid var(--accent);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-        }
-        .media-item img { width: 100%; height: 100%; object-fit: cover; }
-        .media-item video { width: 100%; height: 100%; object-fit: cover; }
+        /* Featured Grid */
+        .media-collage { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px; gap: 20px; }
+        .media-item { border-radius: 12px; overflow: hidden; border: 1px solid var(--glass-border); position: relative; }
+        .media-item img, .media-item video { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%) brightness(0.9); transition: 0.5s; }
+        .media-item:hover img, .media-item:hover video { filter: grayscale(0%) brightness(1.1); transform: scale(1.05); }
         .tall-item { grid-row: span 2; }
 
         /* Buttons */
         .btn {
-            padding: 12px 30px;
+            padding: 15px 35px;
             background: var(--accent);
             color: #fff;
             text-decoration: none;
@@ -190,43 +199,38 @@
             font-weight: 600;
             display: inline-block;
             transition: 0.3s;
-            border: 2px solid var(--accent);
+            border: 1px solid var(--accent);
             cursor: pointer;
+            font-size: 16px;
         }
-        .btn:hover { background: transparent; color: #fff; border-color: #fff; }
+        .btn:hover { background: transparent; box-shadow: 0 0 20px rgba(138, 43, 226, 0.4); }
 
         /* Works Grid */
-        .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .works-card h3 { margin-bottom: 15px; font-size: 22px; }
-        .works-card p { color: var(--text-muted); margin-bottom: 20px; }
-
-        /* Timeline (Experience) */
-        .timeline { border-left: 3px solid var(--accent); padding-left: 20px; margin-left: 10px; }
-        .timeline-item { margin-bottom: 30px; position: relative; }
-        .timeline-item::before {
-            content: ''; position: absolute; width: 15px; height: 15px;
-            background: var(--accent); border-radius: 50%; left: -29px; top: 5px;
-        }
-        .timeline-item h3 { font-size: 20px; }
-        .timeline-item h4 { color: var(--accent); margin: 5px 0 10px; font-size: 15px; }
+        .works-card p { color: var(--text-muted); margin-bottom: 30px; font-size: 16px; line-height: 1.6; }
 
         /* Responsive */
         @media (max-width: 900px) {
             .home-grid { grid-template-columns: 1fr; text-align: center; }
             .hero-text p { margin: 0 auto 30px; }
-            nav ul { display: none; } /* Consider adding a hamburger menu later for mobile */
+            nav ul { display: none; }
             .theme-customizer { bottom: 20px; top: auto; right: 50%; transform: translateX(50%); flex-direction: row; }
+            section { padding-top: 120px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- THE FLUID GRADIENT BACKGROUND -->
+    <div class="wave-background"></div>
+
     <!-- Theme Customizer -->
     <div class="theme-customizer">
-        <div class="color-btn" style="background: #8a2be2;" onclick="setTheme('#8a2be2')"></div> <!-- Purple -->
-        <div class="color-btn" style="background: #00d2ff;" onclick="setTheme('#00d2ff')"></div> <!-- Blue -->
-        <div class="color-btn" style="background: #11998e;" onclick="setTheme('#11998e')"></div> <!-- Green -->
-        <div class="color-btn" style="background: #f12711;" onclick="setTheme('#f12711')"></div> <!-- Orange -->
+        <div class="color-btn" style="background: #8a2be2;" onclick="setTheme('#8a2be2')"></div>
+        <div class="color-btn" style="background: #00d2ff;" onclick="setTheme('#00d2ff')"></div>
+        <div class="color-btn" style="background: #10b981;" onclick="setTheme('#10b981')"></div>
+        <div class="color-btn" style="background: #f43f5e;" onclick="setTheme('#f43f5e')"></div>
     </div>
 
     <header>
@@ -249,22 +253,21 @@
             <div class="home-grid">
                 <div class="hero-text">
                     <h1>Hi, I'm Mehul</h1>
-                    <h2>Content Creator & Medical Writer</h2>
+                    <!-- Typing Effect Container -->
+                    <div class="typing-container" id="typewriter"></div>
+                    
                     <p>Blending healthcare knowledge with high-end digital marketing expertise. I craft compelling visual stories, cinematic media, and impactful social strategies.</p>
                     <a onclick="navigates('works')" class="btn">Explore My Work</a>
                 </div>
                 
                 <div class="media-collage">
                     <div class="media-item tall-item">
-                        <!-- Make sure to upload reel.mp4 to Github -->
                         <video src="reel.mp4" autoplay loop muted playsinline></video>
                     </div>
                     <div class="media-item">
-                        <!-- Upload photo1.jpg -->
                         <img src="photo1.jpg" alt="Featured Work 1">
                     </div>
                     <div class="media-item">
-                        <!-- Upload photo2.jpg -->
                         <img src="photo2.jpg" alt="Featured Work 2">
                     </div>
                 </div>
@@ -275,10 +278,10 @@
         <section id="about">
             <h2 class="section-title">About <span>Me</span></h2>
             <div class="glass-card" style="max-width: 800px;">
-                <p style="font-size: 18px; margin-bottom: 20px; line-height: 1.8;">
+                <p style="font-size: 18px; margin-bottom: 25px; line-height: 1.8; color: var(--text-muted);">
                     I am a versatile creator currently beginning my Bachelor of Physiotherapy (BPT) journey at Jain University. My unique background allows me to bridge the gap between complex healthcare concepts and engaging digital communication.
                 </p>
-                <p style="font-size: 18px; line-height: 1.8;">
+                <p style="font-size: 18px; line-height: 1.8; color: var(--text-muted);">
                     Beyond the medical field, my passion lies in aesthetics and visual storytelling. Whether I am shooting cinematic footage for university festivals, designing branding materials, or writing specialized medical content, my goal is always to create a lasting impact.
                 </p>
             </div>
@@ -288,17 +291,16 @@
         <section id="experience">
             <h2 class="section-title">My <span>Experience</span></h2>
             <div class="glass-card" style="max-width: 800px;">
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3>Event Volunteer & Media Coverage</h3>
-                        <h4>Pramaan 3.0 | Parul Institute of Applied Sciences</h4>
-                        <p style="color: var(--text-muted);">Assisted in event planning, logistics management, and on-ground execution. Captured and produced cinematic video content and promotional materials for the forensic festival.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h3>Freelance Content Creator</h3>
-                        <h4>Photography, Videography & Social Media</h4>
-                        <p style="color: var(--text-muted);">Producing engaging visual content for cultural festivals and live performances. Skilled in aesthetic styling, visual pacing, and utilizing tools like Canva, CapCut, and AI production software.</p>
-                    </div>
+                <div style="margin-bottom: 40px;">
+                    <h3 style="font-size: 24px;">Event Volunteer & Media Coverage</h3>
+                    <h4 style="color: var(--accent); margin: 8px 0 15px; font-weight: 600; font-size: 16px;">Pramaan 3.0 | Parul Institute of Applied Sciences</h4>
+                    <p style="color: var(--text-muted); line-height: 1.7; font-size: 17px;">Assisted in event planning, logistics management, and on-ground execution. Captured and produced cinematic video content and promotional materials for the forensic festival.</p>
+                </div>
+                <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 30px 0;">
+                <div>
+                    <h3 style="font-size: 24px;">Freelance Content Creator</h3>
+                    <h4 style="color: var(--accent); margin: 8px 0 15px; font-weight: 600; font-size: 16px;">Photography, Videography & Social Media</h4>
+                    <p style="color: var(--text-muted); line-height: 1.7; font-size: 17px;">Producing engaging visual content for cultural festivals and live performances. Skilled in aesthetic styling, visual pacing, and utilizing tools like Canva, CapCut, and AI production software.</p>
                 </div>
             </div>
         </section>
@@ -329,9 +331,9 @@
         <section id="resume">
             <h2 class="section-title">My <span>Resume</span></h2>
             <div class="glass-card" style="max-width: 600px; text-align: center;">
-                <h3 style="margin-bottom: 20px; font-size: 24px;">Professional Profile</h3>
-                <p style="color: var(--text-muted); margin-bottom: 30px;">Download my complete resume to view my full academic background, technical skills, and certifications.</p>
-                <a href="Mehul_Deshmukh_Resume.docx" download class="btn" style="font-size: 18px; padding: 15px 40px;">📄 Download Resume</a>
+                <h3 style="margin-bottom: 15px; font-size: 26px;">Professional Profile</h3>
+                <p style="color: var(--text-muted); margin-bottom: 40px; line-height: 1.7; font-size: 18px;">Download my complete resume to view my full academic background, technical skills, and certifications.</p>
+                <a href="Mehul_Deshmukh_Resume.docx" download class="btn" style="padding: 16px 45px;">📄 Download Resume</a>
             </div>
         </section>
 
@@ -339,33 +341,26 @@
         <section id="contact">
             <h2 class="section-title">Get In <span>Touch</span></h2>
             <div class="glass-card" style="max-width: 600px;">
-                <p style="font-size: 18px; margin-bottom: 20px;">Let's collaborate! Feel free to reach out for content creation, medical writing, or social media management opportunities.</p>
-                <p style="font-size: 18px; margin-bottom: 15px;">📧 <strong style="color: var(--accent);">Email:</strong> mehuldeshmukh106@gmail.com</p>
-                <p style="font-size: 18px; margin-bottom: 15px;">📞 <strong style="color: var(--accent);">Phone:</strong> +91 8109007299</p>
-                <p style="font-size: 18px; margin-bottom: 15px;">💼 <strong style="color: var(--accent);">LinkedIn:</strong> <a href="https://www.linkedin.com/in/mehul-deshmukh-663390201" target="_blank" style="color: #fff; text-decoration: none;">Connect on LinkedIn</a></p>
+                <p style="font-size: 18px; margin-bottom: 35px; color: var(--text-muted); line-height: 1.6;">Let's collaborate! Feel free to reach out for content creation, medical writing, or social media management opportunities.</p>
+                <p style="font-size: 18px; margin-bottom: 25px;">📧 <strong style="color: var(--text-main);">Email:</strong> <span style="color: var(--text-muted);">mehuldeshmukh106@gmail.com</span></p>
+                <p style="font-size: 18px; margin-bottom: 25px;">📞 <strong style="color: var(--text-main);">Phone:</strong> <span style="color: var(--text-muted);">+91 8109007299</span></p>
+                <p style="font-size: 18px; margin-bottom: 25px;">💼 <strong style="color: var(--text-main);">LinkedIn:</strong> <a href="https://www.linkedin.com/in/mehul-deshmukh-663390201" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">Connect on LinkedIn</a></p>
             </div>
         </section>
     </main>
 
-    <!-- Javascript for Page Navigation and Theme Customizer -->
     <script>
         // Tab Navigation Logic (Single Page Application feel)
         function navigates(sectionId) {
-            // Hide all sections
             const sections = document.querySelectorAll('section');
             sections.forEach(sec => sec.classList.remove('active-section'));
             
-            // Show target section
             document.getElementById(sectionId).classList.add('active-section');
             
-            // Update Active Link in Nav
             const navLinks = document.querySelectorAll('.nav-btn');
             navLinks.forEach(link => link.classList.remove('active-link'));
-            
-            // Find the clicked link and make it active
             event.target.classList.add('active-link');
             
-            // Scroll to top automatically when changing tabs
             window.scrollTo(0,0);
         }
 
@@ -373,7 +368,31 @@
         function setTheme(color) {
             document.documentElement.style.setProperty('--accent', color);
         }
-    </script>
 
+        // Typing Effect Logic
+        const texts = ["Content Creator", "Medical Writer", "Social Media Manager", "Visual Storyteller"];
+        let count = 0;
+        let index = 0;
+        let currentText = '';
+        let letter = '';
+
+        (function type() {
+            if (count === texts.length) {
+                count = 0;
+            }
+            currentText = texts[count];
+            letter = currentText.slice(0, ++index);
+            
+            document.getElementById('typewriter').textContent = letter + "|";
+            
+            if (letter.length === currentText.length) {
+                count++;
+                index = 0;
+                setTimeout(type, 2000); // Pause before next word
+            } else {
+                setTimeout(type, 100); // Typing speed
+            }
+        }());
+    </script>
 </body>
 </html>
