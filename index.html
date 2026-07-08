@@ -3,62 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mehul Deshmukh | Professional Portfolio</title>
-    <!-- Professional Font -->
+    <title>MEHUL // SYS.ADMIN</title>
+    <!-- Hacker / Terminal Fonts -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
         :root {
-            --accent: #8a2be2; /* Default Purple */
-            --glass-bg: rgba(20, 20, 25, 0.4);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --text-main: #ffffff;
-            --text-muted: #9ca3af;
+            --term-color: #00ff41; /* Matrix Green */
+            --bg-color: #050505;
+            --term-muted: #008f11;
+            --border-color: #00ff41;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Share Tech Mono', monospace;
         }
 
-        /* 
-         * THE PREMIUM WAVE / FLUID GRADIENT BACKGROUND 
-         * Exactly like high-end dev portfolios
-         */
         body {
-            background-color: #050505;
-            color: var(--text-main);
+            background-color: var(--bg-color);
+            color: var(--term-color);
             overflow-x: hidden;
-            min-height: 100vh;
+            /* CRT Screen Effect */
+            background-image: 
+                linear-gradient(rgba(0, 255, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 0, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
         }
 
-        .wave-background {
+        /* Scanline Overlay */
+        body::after {
+            content: " ";
+            display: block;
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            background: linear-gradient(
-                45deg, 
-                #050505, 
-                #0f0c29, 
-                #1a1a2e, 
-                var(--accent), 
-                #050505
-            );
-            background-size: 400% 400%;
-            animation: gradientWave 15s ease infinite;
-            opacity: 0.25; /* Keeps it subtle and professional */
-            filter: blur(40px);
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
         }
 
-        @keyframes gradientWave {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* Glitch Effect */
+        .glitch {
+            font-size: 60px;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.025em -0.05em 0 rgba(0,255,0,0.75), 0.025em 0.05em 0 rgba(0,0,255,0.75);
+            animation: glitch 500ms infinite;
+        }
+
+        .glitch span {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .glitch span:first-child {
+            animation: glitch 650ms infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+            transform: translate(-0.025em, -0.0125em);
+            opacity: 0.8;
+        }
+
+        .glitch span:last-child {
+            animation: glitch 375ms infinite;
+            clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+            transform: translate(0.0125em, 0.025em);
+            opacity: 0.8;
+        }
+
+        @keyframes glitch {
+            0% { text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.05em -0.025em 0 rgba(0,255,0,0.75), -0.025em 0.05em 0 rgba(0,0,255,0.75); }
+            14% { text-shadow: 0.05em 0 0 rgba(255,0,0,0.75), -0.05em -0.025em 0 rgba(0,255,0,0.75), -0.025em 0.05em 0 rgba(0,0,255,0.75); }
+            15% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75); }
+            49% { text-shadow: -0.05em -0.025em 0 rgba(255,0,0,0.75), 0.025em 0.025em 0 rgba(0,255,0,0.75), -0.05em -0.05em 0 rgba(0,0,255,0.75); }
+            50% { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75); }
+            99% { text-shadow: 0.025em 0.05em 0 rgba(255,0,0,0.75), 0.05em 0 0 rgba(0,255,0,0.75), 0 -0.05em 0 rgba(0,0,255,0.75); }
+            100% { text-shadow: -0.025em 0 0 rgba(255,0,0,0.75), -0.025em -0.025em 0 rgba(0,255,0,0.75), -0.025em -0.05em 0 rgba(0,0,255,0.75); }
         }
 
         /* Navigation */
@@ -66,52 +93,38 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 8%;
-            background: rgba(5, 5, 5, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            border-bottom: 2px solid var(--border-color);
+            z-index: 100;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid var(--glass-border);
         }
 
         .logo {
-            font-size: 26px;
-            font-weight: 800;
-            color: var(--text-main);
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--term-color);
             text-decoration: none;
-            letter-spacing: -0.5px;
+            text-shadow: 0 0 5px var(--term-color);
         }
-        .logo span { color: var(--accent); transition: color 0.3s ease; }
 
-        nav ul { display: flex; list-style: none; gap: 35px; }
+        nav ul { display: flex; list-style: none; gap: 20px; flex-wrap: wrap; }
         nav ul li a {
-            color: var(--text-muted);
+            color: var(--term-muted);
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 16px;
             cursor: pointer;
-            transition: 0.3s;
-            position: relative;
+            transition: 0.2s;
         }
-        
-        /* Underline Animation for Links */
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--accent);
-            transition: width 0.3s ease;
+        nav ul li a:hover, nav ul li a.active-link {
+            color: var(--term-color);
+            text-shadow: 0 0 10px var(--term-color);
         }
-        nav ul li a:hover::after, nav ul li a.active-link::after { width: 100%; }
-        nav ul li a:hover, nav ul li a.active-link { color: var(--text-main); }
+        nav ul li a::before { content: "[ "; color: var(--term-muted); }
+        nav ul li a::after { content: " ]"; color: var(--term-muted); }
+        nav ul li a:hover::before, nav ul li a:hover::after, nav ul li a.active-link::before, nav ul li a.active-link::after { color: var(--term-color); }
 
         /* Theme Customizer */
         .theme-customizer {
@@ -119,130 +132,151 @@
             right: 20px;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0,0,0,0.5);
-            backdrop-filter: blur(10px);
-            padding: 15px 10px;
-            border-radius: 30px;
-            border: 1px solid var(--glass-border);
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 10px;
             z-index: 999;
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            background: #000;
         }
-
         .color-btn {
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
+            width: 25px;
+            height: 25px;
             cursor: pointer;
-            border: 2px solid transparent;
-            transition: 0.3s;
+            border: 1px solid #fff;
         }
-        .color-btn:hover { transform: scale(1.3); border-color: #fff; }
 
-        /* Sections (Single Page App Logic) */
+        /* Sections */
         section {
             display: none;
-            padding: 160px 8% 80px;
+            padding: 120px 5% 50px;
             min-height: 100vh;
-            animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        section.active-section { display: block; }
+        section.active-section { display: block; animation: crtFlicker 0.1s ease-in; }
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .section-title { font-size: 45px; margin-bottom: 50px; font-weight: 800; letter-spacing: -1px; }
-        .section-title span { color: var(--accent); }
-
-        /* Premium Glassmorphism Cards */
-        .glass-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 40px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        @keyframes crtFlicker {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 1; }
         }
 
-        /* Home Section */
-        .home-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; }
-        .hero-text h1 { font-size: 70px; line-height: 1.1; margin-bottom: 20px; letter-spacing: -2px; }
-        
-        /* Typing Effect Styling */
-        .typing-container {
-            font-size: 24px;
-            font-weight: 600;
-            color: var(--accent);
-            margin-bottom: 25px;
-            height: 35px;
+        .section-title {
+            font-size: 30px;
+            margin-bottom: 40px;
+            border-bottom: 2px dashed var(--term-color);
+            display: inline-block;
+            padding-bottom: 5px;
         }
-        .hero-text p { color: var(--text-muted); font-size: 18px; margin-bottom: 40px; max-width: 90%; line-height: 1.7; }
+        .section-title::before { content: "> "; }
 
-        /* Featured Grid */
-        .media-collage { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px; gap: 20px; }
-        .media-item { border-radius: 12px; overflow: hidden; border: 1px solid var(--glass-border); position: relative; }
-        .media-item img, .media-item video { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%) brightness(0.9); transition: 0.5s; }
-        .media-item:hover img, .media-item:hover video { filter: grayscale(0%) brightness(1.1); transform: scale(1.05); }
-        .tall-item { grid-row: span 2; }
+        /* Cyber Cards */
+        .cyber-card {
+            border: 1px solid var(--term-color);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 25px;
+            position: relative;
+            box-shadow: inset 0 0 15px rgba(0, 255, 65, 0.1);
+        }
+        .cyber-card::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px;
+            width: 15px; height: 15px;
+            border-top: 3px solid var(--term-color);
+            border-left: 3px solid var(--term-color);
+        }
+        .cyber-card::after {
+            content: '';
+            position: absolute;
+            bottom: -2px; right: -2px;
+            width: 15px; height: 15px;
+            border-bottom: 3px solid var(--term-color);
+            border-right: 3px solid var(--term-color);
+        }
+
+        /* Terminal Text */
+        .terminal-text {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .highlight { background: var(--term-color); color: #000; padding: 0 5px; }
 
         /* Buttons */
         .btn {
-            padding: 15px 35px;
-            background: var(--accent);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
             display: inline-block;
-            transition: 0.3s;
-            border: 1px solid var(--accent);
+            padding: 10px 20px;
+            border: 1px solid var(--term-color);
+            color: var(--term-color);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            background: transparent;
             cursor: pointer;
-            font-size: 16px;
+            transition: 0.2s;
+            margin-top: 15px;
         }
-        .btn:hover { background: transparent; box-shadow: 0 0 20px rgba(138, 43, 226, 0.4); }
+        .btn:hover { background: var(--term-color); color: #000; }
 
-        /* Works Grid */
-        .works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .works-card h3 { margin-bottom: 15px; font-size: 22px; }
-        .works-card p { color: var(--text-muted); margin-bottom: 30px; font-size: 16px; line-height: 1.6; }
+        /* Media Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        
+        .media-box {
+            border: 1px solid var(--term-color);
+            position: relative;
+        }
+        .media-box img, .media-box video {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(120%);
+            transition: 0.3s;
+        }
+        .media-box:hover img, .media-box:hover video { filter: grayscale(0%) contrast(100%); }
+        .media-tag {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background: var(--term-color);
+            color: #000;
+            font-size: 12px;
+            padding: 2px 5px;
+            font-weight: bold;
+        }
 
-        /* Responsive */
-        @media (max-width: 900px) {
-            .home-grid { grid-template-columns: 1fr; text-align: center; }
-            .hero-text p { margin: 0 auto 30px; }
-            nav ul { display: none; }
-            .theme-customizer { bottom: 20px; top: auto; right: 50%; transform: translateX(50%); flex-direction: row; }
-            section { padding-top: 120px; }
+        /* Typewriter Cursor */
+        .cursor { display: inline-block; width: 10px; height: 20px; background: var(--term-color); animation: blink 1s step-end infinite; vertical-align: bottom; }
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* Mobile Fixes */
+        @media (max-width: 768px) {
+            nav ul { justify-content: center; }
+            .theme-customizer { bottom: 10px; top: auto; right: 50%; transform: translateX(50%); flex-direction: row; }
+            .glitch { font-size: 40px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- THE FLUID GRADIENT BACKGROUND -->
-    <div class="wave-background"></div>
-
-    <!-- Theme Customizer -->
+    <!-- Cyberpunk Theme Customizer -->
     <div class="theme-customizer">
-        <div class="color-btn" style="background: #8a2be2;" onclick="setTheme('#8a2be2')"></div>
-        <div class="color-btn" style="background: #00d2ff;" onclick="setTheme('#00d2ff')"></div>
-        <div class="color-btn" style="background: #10b981;" onclick="setTheme('#10b981')"></div>
-        <div class="color-btn" style="background: #f43f5e;" onclick="setTheme('#f43f5e')"></div>
+        <div class="color-btn" style="background: #00ff41;" onclick="setTheme('#00ff41', '#008f11')"></div> <!-- Matrix Green -->
+        <div class="color-btn" style="background: #ff003c;" onclick="setTheme('#ff003c', '#8a0020')"></div> <!-- Blood Red -->
+        <div class="color-btn" style="background: #00ffff;" onclick="setTheme('#00ffff', '#008b8b')"></div> <!-- Cyber Cyan -->
+        <div class="color-btn" style="background: #ffb000;" onclick="setTheme('#ffb000', '#cc8c00')"></div> <!-- Hacker Amber -->
     </div>
 
     <header>
-        <a href="#" class="logo" onclick="navigates('home')">Mehul<span>.</span></a>
+        <a href="#" class="logo" onclick="navigates('home')">root@mehul:~#</a>
         <nav>
             <ul>
-                <li><a onclick="navigates('home')" class="nav-btn active-link">Home</a></li>
-                <li><a onclick="navigates('about')" class="nav-btn">About</a></li>
-                <li><a onclick="navigates('experience')" class="nav-btn">Experience</a></li>
-                <li><a onclick="navigates('works')" class="nav-btn">Works</a></li>
-                <li><a onclick="navigates('resume')" class="nav-btn">Resume</a></li>
-                <li><a onclick="navigates('contact')" class="nav-btn">Contact</a></li>
+                <li><a onclick="navigates('home')" class="nav-btn active-link">home</a></li>
+                <li><a onclick="navigates('about')" class="nav-btn">sys_info</a></li>
+                <li><a onclick="navigates('skills')" class="nav-btn">modules</a></li>
+                <li><a onclick="navigates('projects')" class="nav-btn">projects</a></li>
+                <li><a onclick="navigates('writeups')" class="nav-btn">writeups</a></li>
+                <li><a onclick="navigates('contact')" class="nav-btn">ping_me</a></li>
             </ul>
         </nav>
     </header>
@@ -250,107 +284,123 @@
     <main>
         <!-- HOME SECTION -->
         <section id="home" class="active-section">
-            <div class="home-grid">
-                <div class="hero-text">
-                    <h1>Hi, I'm Mehul</h1>
-                    <!-- Typing Effect Container -->
-                    <div class="typing-container" id="typewriter"></div>
-                    
-                    <p>Blending healthcare knowledge with high-end digital marketing expertise. I craft compelling visual stories, cinematic media, and impactful social strategies.</p>
-                    <a onclick="navigates('works')" class="btn">Explore My Work</a>
+            <div class="terminal-text">
+                <p>>_ INITIALIZING SYSTEM ARCHITECTURE...</p>
+                <p>>_ DECRYPTING USER PROFILE...</p>
+                <br>
+                <div class="glitch" data-text="MEHUL DESHMUKH">MEHUL DESHMUKH
+                    <span>MEHUL DESHMUKH</span>
+                    <span>MEHUL DESHMUKH</span>
                 </div>
-                
-                <div class="media-collage">
-                    <div class="media-item tall-item">
-                        <video src="reel.mp4" autoplay loop muted playsinline></video>
-                    </div>
-                    <div class="media-item">
-                        <img src="photo1.jpg" alt="Featured Work 1">
-                    </div>
-                    <div class="media-item">
-                        <img src="photo2.jpg" alt="Featured Work 2">
-                    </div>
-                </div>
+                <br>
+                <p>>_ ROLE: <span id="typewriter"></span><span class="cursor"></span></p>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <a onclick="navigates('projects')" class="btn">EXECUTE ./VIEW_WORK.sh</a>
+                <a href="Mehul_Deshmukh_Resume.docx" download class="btn">DOWNLOAD ./RESUME.sys</a>
             </div>
         </section>
 
         <!-- ABOUT SECTION -->
         <section id="about">
-            <h2 class="section-title">About <span>Me</span></h2>
-            <div class="glass-card" style="max-width: 800px;">
-                <p style="font-size: 18px; margin-bottom: 25px; line-height: 1.8; color: var(--text-muted);">
-                    I am a versatile creator currently beginning my Bachelor of Physiotherapy (BPT) journey at Jain University. My unique background allows me to bridge the gap between complex healthcare concepts and engaging digital communication.
+            <h2 class="section-title">sys_info</h2>
+            <div class="cyber-card">
+                <p class="terminal-text">
+                    <span class="highlight">STATUS:</span> Active
+                    <br><br>
+                    >_ Decoding Background...
+                    <br>
+                    Currently extracting knowledge via Bachelor of Physiotherapy (BPT) at Jain University. Bridging the gap between organic human mechanics and digital algorithms.
+                    <br><br>
+                    >_ Operating Parameters:
+                    <br>
+                    I operate at the intersection of medical science and digital aesthetic. I don't just write content; I engineer visual and textual assets that infect the algorithm and engage the target demographic.
                 </p>
-                <p style="font-size: 18px; line-height: 1.8; color: var(--text-muted);">
-                    Beyond the medical field, my passion lies in aesthetics and visual storytelling. Whether I am shooting cinematic footage for university festivals, designing branding materials, or writing specialized medical content, my goal is always to create a lasting impact.
-                </p>
             </div>
         </section>
 
-        <!-- EXPERIENCE SECTION -->
-        <section id="experience">
-            <h2 class="section-title">My <span>Experience</span></h2>
-            <div class="glass-card" style="max-width: 800px;">
-                <div style="margin-bottom: 40px;">
-                    <h3 style="font-size: 24px;">Event Volunteer & Media Coverage</h3>
-                    <h4 style="color: var(--accent); margin: 8px 0 15px; font-weight: 600; font-size: 16px;">Pramaan 3.0 | Parul Institute of Applied Sciences</h4>
-                    <p style="color: var(--text-muted); line-height: 1.7; font-size: 17px;">Assisted in event planning, logistics management, and on-ground execution. Captured and produced cinematic video content and promotional materials for the forensic festival.</p>
+        <!-- SKILLS SECTION -->
+        <section id="skills">
+            <h2 class="section-title">modules_loaded</h2>
+            <div class="grid">
+                <div class="cyber-card">
+                    <h3>>_ MEDIA.sys</h3>
+                    <p class="terminal-text" style="margin-top: 10px;">Cinematic Videography, Aesthetic Layering, Video Editing (CapCut/VN), Photography.</p>
                 </div>
-                <hr style="border: 0; border-top: 1px solid var(--glass-border); margin: 30px 0;">
-                <div>
-                    <h3 style="font-size: 24px;">Freelance Content Creator</h3>
-                    <h4 style="color: var(--accent); margin: 8px 0 15px; font-weight: 600; font-size: 16px;">Photography, Videography & Social Media</h4>
-                    <p style="color: var(--text-muted); line-height: 1.7; font-size: 17px;">Producing engaging visual content for cultural festivals and live performances. Skilled in aesthetic styling, visual pacing, and utilizing tools like Canva, CapCut, and AI production software.</p>
+                <div class="cyber-card">
+                    <h3>>_ CONTENT.exe</h3>
+                    <p class="terminal-text" style="margin-top: 10px;">Medical Writing, Copywriting, AI-Assisted Scripting, Audience Hacking.</p>
                 </div>
-            </div>
-        </section>
-
-        <!-- WORKS SECTION -->
-        <section id="works">
-            <h2 class="section-title">Featured <span>Works</span></h2>
-            <div class="works-grid">
-                <div class="glass-card works-card">
-                    <h3>Healthcare & Medical Writing</h3>
-                    <p>Read my insights on the intersection of healthcare and communication.</p>
-                    <a href="Healthcare_Article.pdf" target="_blank" class="btn">Read Article</a>
-                </div>
-                <div class="glass-card works-card">
-                    <h3>Plastics For Change</h3>
-                    <p>A content piece exploring sustainability and environmental impact.</p>
-                    <a href="Plastics_Article.pdf" target="_blank" class="btn">Read Document</a>
-                </div>
-                <div class="glass-card works-card">
-                    <h3>Visual Media Drive</h3>
-                    <p>Access my complete Google Drive containing high-quality event photography and cinematic video edits.</p>
-                    <a href="https://drive.google.com/drive/folders/13ro8TUWFXnzUNNAsq1b7PyzdWH94VuHg" target="_blank" class="btn">Open Drive</a>
+                <div class="cyber-card">
+                    <h3>>_ TOOLS.bat</h3>
+                    <p class="terminal-text" style="margin-top: 10px;">Canva (Certified Protocol), ChatGPT, Google Workspace.</p>
                 </div>
             </div>
         </section>
 
-        <!-- RESUME SECTION -->
-        <section id="resume">
-            <h2 class="section-title">My <span>Resume</span></h2>
-            <div class="glass-card" style="max-width: 600px; text-align: center;">
-                <h3 style="margin-bottom: 15px; font-size: 26px;">Professional Profile</h3>
-                <p style="color: var(--text-muted); margin-bottom: 40px; line-height: 1.7; font-size: 18px;">Download my complete resume to view my full academic background, technical skills, and certifications.</p>
-                <a href="Mehul_Deshmukh_Resume.docx" download class="btn" style="padding: 16px 45px;">📄 Download Resume</a>
+        <!-- PROJECTS / WORKS SECTION -->
+        <section id="projects">
+            <h2 class="section-title">projects / sidequests</h2>
+            <div class="grid">
+                <!-- MEDIA ITEM 1 -->
+                <div class="media-box">
+                    <div class="media-tag">REC_001.mp4</div>
+                    <video src="reel.mp4" autoplay loop muted playsinline></video>
+                </div>
+                
+                <!-- MEDIA ITEM 2 -->
+                <div class="media-box">
+                    <div class="media-tag">IMG_DATA_01</div>
+                    <img src="photo1.jpg" alt="Project File 1">
+                </div>
+
+                <!-- MEDIA ITEM 3 -->
+                <div class="media-box">
+                    <div class="media-tag">IMG_DATA_02</div>
+                    <img src="photo2.jpg" alt="Project File 2">
+                </div>
+            </div>
+            <div style="margin-top: 30px; text-align: center;">
+                <a href="https://drive.google.com/drive/folders/13ro8TUWFXnzUNNAsq1b7PyzdWH94VuHg" target="_blank" class="btn">>_ ACCESS SECURE ARCHIVE (G-DRIVE)</a>
+            </div>
+        </section>
+
+        <!-- WRITEUPS SECTION -->
+        <section id="writeups">
+            <h2 class="section-title">classified_writeups</h2>
+            <div class="grid">
+                <div class="cyber-card">
+                    <h3>[ DOC: HEALTHCARE PROTOCOL ]</h3>
+                    <p class="terminal-text" style="font-size: 14px; margin-top: 10px;">Analysis on the intersection of healthcare and digital communication paradigms.</p>
+                    <a href="Healthcare_Article.pdf" target="_blank" class="btn">> DECRYPT_FILE</a>
+                </div>
+                <div class="cyber-card">
+                    <h3>[ DOC: PLASTICS_4_CHANGE ]</h3>
+                    <p class="terminal-text" style="font-size: 14px; margin-top: 10px;">Environmental impact metrics and sustainability content matrix.</p>
+                    <a href="Plastics_Article.pdf" target="_blank" class="btn">> DECRYPT_FILE</a>
+                </div>
             </div>
         </section>
 
         <!-- CONTACT SECTION -->
         <section id="contact">
-            <h2 class="section-title">Get In <span>Touch</span></h2>
-            <div class="glass-card" style="max-width: 600px;">
-                <p style="font-size: 18px; margin-bottom: 35px; color: var(--text-muted); line-height: 1.6;">Let's collaborate! Feel free to reach out for content creation, medical writing, or social media management opportunities.</p>
-                <p style="font-size: 18px; margin-bottom: 25px;">📧 <strong style="color: var(--text-main);">Email:</strong> <span style="color: var(--text-muted);">mehuldeshmukh106@gmail.com</span></p>
-                <p style="font-size: 18px; margin-bottom: 25px;">📞 <strong style="color: var(--text-main);">Phone:</strong> <span style="color: var(--text-muted);">+91 8109007299</span></p>
-                <p style="font-size: 18px; margin-bottom: 25px;">💼 <strong style="color: var(--text-main);">LinkedIn:</strong> <a href="https://www.linkedin.com/in/mehul-deshmukh-663390201" target="_blank" style="color: var(--accent); text-decoration: none; font-weight: 600;">Connect on LinkedIn</a></p>
+            <h2 class="section-title">ping_me</h2>
+            <div class="cyber-card" style="max-width: 600px;">
+                <p class="terminal-text">>_ INITIATING HANDSHAKE PROTOCOL...</p>
+                <p class="terminal-text">>_ SYSTEM READY TO RECEIVE TRANSMISSION.</p>
+                <br>
+                <p class="terminal-text">
+                    [ EMAIL ] :: <span class="highlight">mehuldeshmukh106@gmail.com</span><br><br>
+                    [ PHONE ] :: <span class="highlight">+91 8109007299</span><br><br>
+                    [ NETWORK ] :: <a href="https://www.linkedin.com/in/mehul-deshmukh-663390201" target="_blank" style="color: var(--term-color);">>_ ESTABLISH LINKEDIN CONNECTION</a>
+                </p>
             </div>
         </section>
     </main>
 
     <script>
-        // Tab Navigation Logic (Single Page Application feel)
+        // SPY/HACKER NAVIGATION LOGIC
         function navigates(sectionId) {
             const sections = document.querySelectorAll('section');
             sections.forEach(sec => sec.classList.remove('active-section'));
@@ -364,35 +414,48 @@
             window.scrollTo(0,0);
         }
 
-        // Theme Customizer Logic
-        function setTheme(color) {
-            document.documentElement.style.setProperty('--accent', color);
+        // CYBER THEME CHANGER
+        function setTheme(primary, secondary) {
+            document.documentElement.style.setProperty('--term-color', primary);
+            document.documentElement.style.setProperty('--border-color', primary);
+            document.documentElement.style.setProperty('--term-muted', secondary);
         }
 
-        // Typing Effect Logic
-        const texts = ["Content Creator", "Medical Writer", "Social Media Manager", "Visual Storyteller"];
-        let count = 0;
-        let index = 0;
-        let currentText = '';
-        let letter = '';
+        // HACKER TYPEWRITER EFFECT
+        const roles = ["MEDICAL_WRITER.sys", "DIGITAL_ALCHEMIST.exe", "SOCIAL_HACKER.bat", "CONTENT_CREATOR.sh"];
+        let roleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typeSpeed = 100;
 
-        (function type() {
-            if (count === texts.length) {
-                count = 0;
-            }
-            currentText = texts[count];
-            letter = currentText.slice(0, ++index);
-            
-            document.getElementById('typewriter').textContent = letter + "|";
-            
-            if (letter.length === currentText.length) {
-                count++;
-                index = 0;
-                setTimeout(type, 2000); // Pause before next word
+        function typeEffect() {
+            const currentRole = roles[roleIndex];
+            const textElement = document.getElementById("typewriter");
+
+            if (isDeleting) {
+                textElement.innerText = currentRole.substring(0, charIndex - 1);
+                charIndex--;
+                typeSpeed = 50;
             } else {
-                setTimeout(type, 100); // Typing speed
+                textElement.innerText = currentRole.substring(0, charIndex + 1);
+                charIndex++;
+                typeSpeed = 150;
             }
-        }());
+
+            if (!isDeleting && charIndex === currentRole.length) {
+                isDeleting = true;
+                typeSpeed = 2000; // Pause at end of word
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                typeSpeed = 500; // Pause before new word
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+
+        // Start typing effect on load
+        document.addEventListener("DOMContentLoaded", typeEffect);
     </script>
 </body>
 </html>
