@@ -495,7 +495,7 @@
       <div class="glass bento-item photo-card" id="photoSlot2">
         <img class="media-fill" id="photo2Img" src="photo2.jpg" alt="Photography work by Mehul Deshmukh">
         <div class="media-placeholder" id="photo2Placeholder">
-          <span class="fname">photo1.jpg</span
+          <span class="fname">photo2.jpg</span>
           <span>Image not loaded</span>
         </div>
       </div>
@@ -894,13 +894,30 @@
   // ----- Graceful media fallback -----
   function bindMediaFallback(mediaEl, placeholderEl, isVideo){
     if(!mediaEl) return;
-    const hide = () => { mediaEl.style.display = 'none'; if(placeholderEl) placeholderEl.style.display = 'flex'; };
+
+    const show = () => {
+      mediaEl.style.display = 'block';
+      if(placeholderEl) placeholderEl.style.display = 'none';
+    };
+
+    const hide = () => {
+      mediaEl.style.display = 'none';
+      if(placeholderEl) placeholderEl.style.display = 'flex';
+    };
+
     if(isVideo){
+      mediaEl.addEventListener('loadeddata', show);
+      mediaEl.addEventListener('canplay', show);
       mediaEl.addEventListener('error', hide);
       mediaEl.addEventListener('stalled', () => { if(mediaEl.readyState === 0) hide(); });
       setTimeout(() => { if(mediaEl.readyState === 0) hide(); }, 1800);
     } else {
+      mediaEl.addEventListener('load', show);
       mediaEl.addEventListener('error', hide);
+
+      if(mediaEl.complete && mediaEl.naturalWidth > 0){
+        show();
+      }
     }
   }
   bindMediaFallback(document.getElementById('reelVideo'), document.getElementById('videoPlaceholder'), true);
