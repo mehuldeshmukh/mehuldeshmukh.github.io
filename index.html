@@ -221,25 +221,106 @@
   .page-head p{ color: var(--ink-dim); max-width:560px; line-height:1.7; font-size:0.9375rem; }
 
   /* ---------- Experience ---------- */
-  .exp-timeline{ position:relative; display:flex; flex-direction:column; gap:20px; }
-  .exp-item{ position:relative; display:grid; grid-template-columns: 96px 1fr; gap:24px; padding:32px; }
-  .exp-item .exp-marker{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; }
-  .exp-num{ font-family: var(--f-display); font-size:0.8125rem; color: var(--accent-dim); letter-spacing:0.08em; transition: color 0.5s var(--ease); }
-  .exp-duration{ font-size:0.75rem; color: var(--ink-faint); line-height:1.5; }
-  .exp-status{
-    font-size:0.625rem; letter-spacing:0.08em; text-transform:uppercase; font-weight:700;
-    color: var(--accent); border:1px solid var(--accent-dim); border-radius:999px; padding:4px 9px;
-    width:fit-content; transition: color 0.5s var(--ease), border-color 0.5s var(--ease);
-  }
-  .exp-item h3{ font-size:1.3125rem; font-weight:700; margin-bottom:4px; }
-  .exp-org{ font-size:0.875rem; color: var(--ink-dim); margin-bottom:6px; }
-  .exp-loc{ font-size:0.75rem; color: var(--ink-faint); margin-bottom:16px; }
-  .exp-desc{ color: var(--ink-dim); line-height:1.7; font-size:0.9375rem; margin-bottom:18px; }
+     <div class="exp-timeline">
+      <div class="glass exp-item">
+        <div class="exp-marker">
+          <span class="exp-num">01</span>
+          <span class="exp-status">Ongoing</span>
+          <span class="exp-duration">Sep 2026 – Present<br>On-site</span>
+        </div>
+        <div>
+          <h3>Creative Director</h3>
+          <div class="exp-org">Superbliz — Design & Marketing Agency</div>
+          <div class="exp-loc">Bengaluru, Karnataka, India</div>
+          <p class="exp-desc">Leading creative direction and ideation for social media and brand projects across multiple clients. Developing creative concepts, visual references, and campaign directions for short-form, social-first content, and guiding content planning, trend analysis, and execution across platforms — while overseeing shoot concepts and collaborating with founders and internal teams to keep creative consistent across every brand.</p>
+          <div class="tag-row">
+            <span class="tag">Creative Direction</span>
+            <span class="tag">Creative Strategy</span>
+            <span class="tag">Content Planning</span>
+            <span class="tag">Trend Analysis</span>
+            <span class="tag">Brand Positioning</span>
+            <span class="tag">Campaign Strategy</span>
+            <span class="tag">Team Collaboration</span>
+          </div>
+        </div>
+      </div>
 
-  @media (max-width: 700px){
-    .exp-item{ grid-template-columns: 1fr; gap:14px; padding:26px; }
-    .exp-item .exp-marker{ flex-direction:row; align-items:center; }
-  }
+      <div class="glass exp-item">
+        <div class="exp-marker">
+          <span class="exp-num">02</span>
+          <span class="exp-status">Ongoing</span>
+          <span class="exp-duration">Jul 2026 – Present<br>Hybrid</span>
+        </div>
+        <div>
+          <h3>Social Media Marketing Intern</h3>
+          <div class="exp-org">Superbliz — Design & Marketing Agency</div>
+          <div class="exp-loc">Bengaluru, Karnataka, India</div>
+          <p class="exp-desc">Supporting social media management and brand growth through content creation, graphic design, short-form video editing, content planning, trend research, and campaign execution across multiple brands.</p>
+          <div class="tag-row">
+            <span class="tag">Social Media Marketing</span>
+            <span class="tag">Content Creation</span>
+            <span class="tag">Content Strategy</span>
+            <span class="tag">Canva</span>
+            <span class="tag">Video Editing</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass exp-item">
+        <div class="exp-marker">
+          <span class="exp-num">03</span>
+          <span class="exp-status">Ongoing</span>
+          <span class="exp-duration">3+ months<br>Remote</span>
+        </div>
+        <div>
+          <h3>Freelance Content Writer &amp; Social Media Manager</h3>
+          <div class="exp-org">Self-employed</div>
+          <div class="exp-loc">Remote</div>
+          <p class="exp-desc">Writing and social media support on a freelance basis — content pieces, captions, and short-form copy, along with basic scheduling and page management for clients.</p>
+          <div class="tag-row">
+            <span class="tag">Content Writing</span>
+            <span class="tag">Social Media Management</span>
+            <span class="tag">Copywriting</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass exp-item">
+        <div class="exp-marker">
+          <span class="exp-num">04</span>
+          <span class="exp-duration">Feb 2026<br>1 month</span>
+        </div>
+        <div>
+          <h3>Content Writer &amp; Media Team Member</h3>
+          <div class="exp-org">Parul University</div>
+          <div class="exp-loc">Vadodara, Gujarat, India · On-site</div>
+          <p class="exp-desc">Contributed to the content and media team for PRAMAAN Forensic Fest 2026 at Parul University. Created written content for event promotions and supported the team's media coverage on the ground.</p>
+          <div class="tag-row">
+            <span class="tag">Writing</span>
+            <span class="tag">Video Editing</span>
+            <span class="tag">Event Media</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass exp-item">
+        <div class="exp-marker">
+          <span class="exp-num">05</span>
+          <span class="exp-duration">Oct 2025<br>1 month</span>
+        </div>
+        <div>
+          <h3>Social Media Coordinator</h3>
+          <div class="exp-org">Parul University</div>
+          <div class="exp-loc">Vadodara, Gujarat, India · On-site</div>
+          <p class="exp-desc">Coordinated activities for Samadhan 2025 – Forensic Solutions Expo. Assisted in organizing and executing a university-level forensic science event, handling social media coverage alongside on-site coordination.</p>
+          <div class="tag-row">
+            <span class="tag">Social Media Management</span>
+            <span class="tag">Video Editing</span>
+            <span class="tag">Event Coordination</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
   /* ---------- Skills ---------- */
   .skills-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:20px; }
